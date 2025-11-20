@@ -51,25 +51,16 @@ This README is intentionally optimized for SEO to help people discover **PerianD
 
 ---
 
-## SEO Metadata & JSON-LD (For Your Portfolio Site)
-Paste this into your portfolio’s `<head>` section:
+## Contact
+For collaboration, inquiries, or project requests, use the contact section on the portfolio site:
+https://periandevelopment.github.io
 
-```html
-<!-- SEO Title -->
-<title>PerianDevelopment — PerianDev | Indie Game Developer (Unity, Unreal, C#, Blender)</title>
+---
 
-<!-- Meta Description -->
-<meta name="description" content="PerianDevelopment (PerianDev) — indie game developer & programmer. Portfolio of Unity & Unreal projects, C# tools, Blender assets, mobile & browser games, game jam entries.">
-
-<!-- JSON-LD Organization Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PerianDevelopment",
-  "url": "https://periandevelopment.github.io",
-  "sameAs": [],
-  "logo": "https://periandevelopment.github.io/logo.png",
-  "description": "PerianDevelopment (PerianDev) — indie game developer focused on Unity & Unreal projects, mobile and browser games, C# tooling, and Blender assets."
-}
-</script>
+Perian, PerianDev, PerianDevelopment, Perian Development, Perian Games, Perian Projects,
+indie developer, indie gamedev, gamedev, game development,
+Unity, Unity3D, Unreal Engine, Unreal, C#, C++ game dev, Blender,
+mobile games, Android games, iOS games, WebGL, browser games,
+game jam, game-jam, prototype, Steam, Steam-ready,
+portfolio, game developer portfolio, programming, game projects, game assets,
+ads, analytics, Unity Ads, Unity Analytics, build automation, GitHub Pages.
