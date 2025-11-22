@@ -23,22 +23,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // ===== SMART ACTIVE NAV LINK (Desktop & Mobile Sidebar) =====
 function initNavHighlight() {
   const currentPath = window.location.pathname.replace(/\/+$/, '');
+  const currentUrl = window.location.href.replace(/\/+$/, '');
   const navLinks = document.querySelectorAll('.site-nav a, .sidebar-nav a');
 
+  // Explicit home page detection (as requested)
+  const isHomePage = currentPath === '' || currentPath === '/' ||
+                     currentUrl === 'https://periandevelopment.github.io' ||
+                     currentUrl === 'https://periandevelopment.github.io/';
+
   navLinks.forEach(link => {
-    const href = link.getAttribute('href').replace(/\/+$/, '');
+    let href = link.getAttribute('href');
+    if (!href) return;
 
-    // Ignore external links
-    if (!href.startsWith('/')) return;
-
-    // ------ HOME RULE ------
-    // If href is "/" -> Only activate when EXACT root "/"
-    if (href === '/' && (currentPath === '' || currentPath === '/')) {
-      link.classList.add('active');
-      return;
+    // ===== HOME PAGE LOGIC (runs first) =====
+    if (isHomePage) {
+      // Check for exact home URL match in multiple formats
+      if (href === '/' || 
+          href === 'https://periandevelopment.github.io' || 
+          href === 'https://periandevelopment.github.io/' ||
+          href === '') {
+        link.classList.add('active');
+      }
+      return; // Skip subpage checks on home page
     }
 
-    // ------ DEFAULT BEHAVIOR FOR SUBPAGES ------
+    // ===== SUBPAGE LOGIC =====
+    // Normalize absolute URLs to paths
+    if (href.startsWith('http')) {
+      try { href = new URL(href).pathname; } 
+      catch { return; } // Skip invalid URLs
+    }
+    
+    href = href.replace(/\/+$/, '');
+
+    // Ignore non-internal links
+    if (!href.startsWith('/')) return;
+
+    // Activate parent links for subpages
     if (currentPath.startsWith(href) && href !== '/') {
       link.classList.add('active');
     }
