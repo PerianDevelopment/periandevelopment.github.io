@@ -28,14 +28,18 @@ function initNavHighlight() {
   navLinks.forEach(link => {
     const href = link.getAttribute('href').replace(/\/+$/, '');
 
+    // Ignore external links
     if (!href.startsWith('/')) return;
 
-    if (href === '/Website1' && currentPath === '/Website1') {
+    // ------ HOME RULE ------
+    // If href is "/" -> Only activate when EXACT root "/"
+    if (href === '/' && (currentPath === '' || currentPath === '/')) {
       link.classList.add('active');
       return;
     }
 
-    if (href !== '/Website1' && currentPath.startsWith(href)) {
+    // ------ DEFAULT BEHAVIOR FOR SUBPAGES ------
+    if (currentPath.startsWith(href) && href !== '/') {
       link.classList.add('active');
     }
   });

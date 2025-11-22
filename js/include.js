@@ -82,14 +82,11 @@ function initNavHighlight() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  const pathParts = window.location.pathname.split('/');
-  const repoName = pathParts[1] ? `/${pathParts[1]}/` : '/';
-
-  loadHTML("header.site-header", `${repoName}header.html`, () => {
+  loadHTML("header.site-header", `https://periandevelopment.github.io/header.html`, () => {
     initNavHighlight();
     moveSidebarToBody(); // Move sidebar elements to body
     initSidebar(); // Initialize after moving
   });
   
-  loadHTML("footer.site-footer", `${repoName}footer.html`);
+  loadHTML("footer.site-footer", `https://periandevelopment.github.io/footer.html`);
 });
