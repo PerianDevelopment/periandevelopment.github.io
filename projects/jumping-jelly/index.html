@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perian Development</title>
+  <meta name="description" content="Perian Development Website" />
+  <link rel="stylesheet" href="../../css/main.css" />
+  <link rel="icon" href="../../assets/icons/icon_shape.svg" />
+
+  <script src="../../js/include.js" defer></script>
+  <script src="../../js/main.js" defer></script>
+  
+</head>
+<body>
+<!-- ===================== HEADER ===================== -->
+  <header class="site-header"></header>
+
+<!-- ===================== HERO ===================== -->
+  <section class="hero hero--project">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav">
+      <a href="../../" class="breadcrumb-item clickable">
+        <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <g>
+        <g>
+          <path d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391
+            v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158
+            c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747
+            c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z"/>
+          <path d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401
+            c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79
+            c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+        <span>Home</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <a href="../" class="breadcrumb-item clickable">
+        <span>Projects</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <div class="breadcrumb-item not-clickable active">
+        <span>Jumping Jelly</span>
+      </div>
+    </nav>
+    </div>
+    
+    <div class="hero__bg">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="../../assets/videos/hero_projects.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__dark-overlay"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__grid"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__filter"></div>
+  </section>
+
+<!-- ===================== PROJECT DETAILS ===================== -->
+<section class="project-details">
+  <div class="project-details__bg"></div>
+  <div class="container">
+    <div class="project-details__grid">
+      
+      <!-- Left Column -->
+      <div class="project-details__column">
+        <div class="project-details__content">
+          <!-- Project Description -->
+          <div class="project-description">
+            <h2>Development Journey</h2>
+            <p>Jumping Jelly is a Windows PC platformer created for <b>Mini Jam 106</b> (themes: <em>Frog</em> and <em>Limited Time</em>). Heavily inspired by <b>Jump King</b>, the goal is simple: climb a tall tree and reach the princess waiting at the top. The execution, however, is intentionally punishing. Every jump is a commitment, every fall is costly, and every decision matters.</p>
+			<p>This was a <b>solo project</b> built within <b>72 hours</b>, following the strict rules of the jam, including theme reveal only at the start. Planning, prototyping, designing, and finishing the game all had to happen inside the 3 day window.</p>
+			
+            <div class="media-item"><img src="jumping.gif" alt="Frog Jumping"></img></div>
+			
+            <h3>Challenges</h3>
+            <p>Building Jumping Jelly alone meant handling movement, level design, time mechanics, art, sound, and testing under extreme time pressure. With the theme revealed at the start of the 72 hour timer, every idea had to be validated fast.</p>
+			<p>To stay efficient, I created a detailed development plan Trello board on day one and followed it from start to finish. Despite the intensity, I completed and submitted the game with hours to spare, hitting the deadline successfully.</p>
+            
+            <div class="divider"></div>
+            
+            <h3>Game Jam</h3>
+            <p>The Mini Jam rules enforced a strict 3 day development window. No preplanning, no prebuilt systems, and no early work allowed.</p>
+            <p>The themes <em>Frog</em> and <em>Limited Time</em> inspired a unique mechanic: a timer per screen, represented by a small time frog image in the top-left. As the player stays on a screen, the time frog gradually becomes transparent. If it fully fades out, the player is instantly reset to the start of the tree.</p>
+			<p>This system is admittedly unfinished and not well balanced, but I'm still proud of implementing something functional under such tight constraints. With more time, I would refine, redesign, or replace this mechanic entirely.</p>
+			
+            <div class="media-item"><img src="princess.gif" alt="Frog Princess"></img></div>
+			
+            <div class="divider"></div>
+            
+            <h3>Player Movement</h3>
+            <p>Movement is heavily inspired by Jump King:</p>
+            <ul class="feature-list">
+              <li><b>Hold Space</b> to charge a jump</li>
+              <li><b>Release Space</b> to jump</li>
+              <li>The direction you hold (A, D, or nothing) determines jump direction</li>
+              <li>Once you jump, you’re committed sinces theres <b>no midair control</b></li>
+              <li>There is no <b>jump strength indicator</b>, by design, to increase difficulty</li>
+              <li>Momentum inverts on wall impact, enabling intentional skill-based bounces</li>
+              <li>There is no <b>jump strength indicator</b>, by design, to increase difficulty</li>
+            </ul>
+            <p>The movement system was the main technical focus, and I'm proud of how it turned out.</p>
+			
+            <div class="media-item"><img src="bonking.gif" alt="Frog Bonking"></img></div>
+			
+            <div class="divider"></div>
+            
+            <h3>Time System</h3>
+            <ul class="feature-list">
+              <li>Each screen has a <b>time frog</b>, which acts as a timer that fades vertically</li>
+              <li>The whole timer system is build visually <b>without numbers</b>, its just a frog!</li>
+              <li>Switching screens resets the timer completely</li>
+              <li>Timing out resets the player back to the start</li>
+            </ul>
+            <p>It’s simple, rushed, and partially unfinished, but it fulfilled the jam’s theme constraints and added tension under time pressure.</p>
+			
+            <div class="media-item"><img src="jumping2.gif" alt="Frog Jumping"></img></div>
+			
+            <div class="divider"></div>
+            
+            <h3>Level & Map Design</h3>
+            <p>The entire map is built as a vertical climbable tree. A logical and simple structure to design quickly. The game features several screens stacked vertically.</p>
+            <p>All of the jumps were carefully designed to create:</p>
+            <ul class="feature-list">
+              <li>Easy jumps</li>
+              <li>Risky jumps</li>
+              <li><b>Extremely</b> punishing jumps</li>
+            </ul>
+            <p>A key design element is a deliberate gap stretching from the top screen down to the very bottom. Crossing it is mechanically easy, but failure means dropping all the way back to the start. The first climb will take hours, while skilled players can complete the full climb in under 5 minutes!</p>
+			<p>The textures and visuals are very primitive. The entire map and background was made quickly in Aseprite. The frog sprite is an external asset from <em>Pinterest</em> and the music comes from <em>OpenGameArt</em>. Visual polish had to take a back seat to gameplay due to time constraints.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="project-details__column">
+        <div class="project-details__content">
+          <!-- Project Cover Image -->
+          <div class="project-cover">
+            <img src="cover.png" alt="Jumping Jelly Game Cover" class="project-cover__image">
+          </div>
+          
+          <!-- Top Row: Project Name + Store Button -->
+          <div class="project-header">
+            <h1 class="project-title">Jumping Jelly</h1>
+            <a href="https://periandevelopment.itch.io/jumping-jelly" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
+              Itch.io Page
+            </a>
+          </div>
+          
+          <!-- Overview Section -->
+          <div class="overview-section">
+            <h3>Overview</h3>
+            <p class="overview-text">Jumping Jelly is a platformer created for <b>Mini Jam 106</b> with the themes <em>Frog</em> and <em>Limited Time</em>. Try to climb to the princess at the top with high stakes and tension platforming!</p>
+          </div>
+		  
+          <!-- Skills/Tools Section -->
+          <div class="skills-section">
+            <h3>Used Skills/Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="../../assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Unity Engine</h4>
+                  <p class="skill-desc">Core development</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="../../assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">C# Programming</h4>
+                  <p class="skill-desc">Game logic, movement, time system</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="../../assets/icons/aseprite.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Aseprite</h4>
+                  <p class="skill-desc">Quick pixelarts</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="../../assets/icons/trello.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Trello</h4>
+                  <p class="skill-desc">Game planning & organizing</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="../../assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Itch.io</h4>
+                  <p class="skill-desc">Game hosting & jam submission</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Meta Information -->
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Game Jam</span>
+              <a class="meta-value" href="https://itch.io/jam/mini-jam-106-frogs" target="_blank" rel="noopener noreferrer"><u>Mini Jam 106</u></a>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Duration</span>
+              <span class="meta-value">3 Days</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Theme</span>
+              <span class="meta-value">Frogs</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Limitation</span>
+              <span class="meta-value">Limited Time</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Submission</span>
+              <span class="meta-value">7h 45m remaining</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Ranking</span>
+              <span class="meta-value">#156</span>
+            </div>
+			
+            <div class="divider"></div>
+			
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2022</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Team Size</span>
+              <span class="meta-value">Solo Project</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Studio</span>
+              <span class="meta-value">Perian Development</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Platform</span>
+              <span class="meta-value">Windows</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value status-released">Released</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer"></footer>
+
+</body>
+</html>

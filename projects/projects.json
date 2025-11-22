@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "folder": "dailys",
+      "title": "Dailys",
+      "description": "Handpicked collection of daily games",
+      "hidden": false,
+      "featured": 0
+    },
+    {
+      "folder": "i-want-donuts",
+      "title": "I Want Donuts!",
+      "description": "A challenging path to get some donuts",
+      "hidden": false,
+      "featured": 1
+    },
+    {
+      "folder": "krunker-spin-simulator-2",
+      "title": "Krunker Spin Simulator 2",
+      "description": "Infinite wheel of fortune simulation",
+      "hidden": false,
+      "featured": 2
+    },
+    {
+      "folder": "jumping-jelly",
+      "title": "Jumping Jelly",
+      "description": "High stakes frog platformer",
+      "hidden": false,
+      "featured": 3
+    },
+    {
+      "folder": "jumping-jelly",
+      "title": "Jumping Jelly",
+      "description": "High stakes frog platformer",
+      "hidden": true,
+      "featured": 4
+    },
+    {
+      "folder": "jumping-jelly",
+      "title": "Jumping Jelly",
+      "description": "High stakes frog platformer",
+      "hidden": true,
+      "featured": 5
+    },
+    {
+      "folder": "jumping-jelly",
+      "title": "Jumping Jelly",
+      "description": "High stakes frog platformer",
+      "hidden": true,
+      "featured": 6
+    },
+    {
+      "folder": "template",
+      "title": "Template",
+      "description": "Description",
+      "hidden": true,
+      "featured": -1
+    }
+  ]
+}
