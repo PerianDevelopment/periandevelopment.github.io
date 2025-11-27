@@ -29,10 +29,10 @@
       "featured": 3
     },
     {
-      "folder": "jumping-jelly",
-      "title": "Jumping Jelly",
-      "description": "High stakes frog platformer",
-      "hidden": true,
+      "folder": "grumbot",
+      "title": "Minecraft Grumbot",
+      "description": "Sentient Minecraft Robot",
+      "hidden": false,
       "featured": 4
     },
     {
