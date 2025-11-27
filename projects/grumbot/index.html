@@ -73,7 +73,88 @@
         <div class="project-details__content">
           <!-- Project Description -->
           <div class="project-description">
-            <h2>Development Journey</h2>
+            <h2>Overview</h2>
+            <p>Grumbot is a fully animated robot built only with Minecraft redstone to be 100% survival-compatible.</p>
+			<p>The concept was inspired by <b>Mumbo Jumbo’s Grumbot in Hermitcraft</b>, but much more advanced. Instead of preset faces on a timer, this version is built around a real display system with an animation pipeline. The result is expressive, modular, and compact for how much it does.</p>
+			
+            <div class="media-item"><img src="grumbot.gif" alt="Grumbot"></img></div>
+			
+            <div class="divider"></div>
+            
+            <h3>Face System & Expression Logic</h3>
+            <p>Grumbot’s face is split into three parts:</p>
+            <ul class="feature-list">
+              <li>Left Eye</li>
+              <li>Right Eye</li>
+              <li>Mouth</li>
+            </ul>
+			<p>Each of these parts has around 10 unique preset shapes, which can be mixed freely. That means 1000 possible face combinations. From smiles to frowns and even cross-eyed.</p>
+			
+            <div class="media-item"><img src="grumbot-face.png" alt="Grumbot Face"></img></div>
+            
+            <div class="divider"></div>
+			
+			
+            <h3>Display Technology</h3>
+            <p>The display is made entirely using <em>Pale Oak Trapdoors</em>. Unpowered trapdoors create a thin bright line, while powered trapdoors fill a whole pixel.</p>
+            <ul class="feature-list">
+              <li><b>Unpowered</b> - Pixel Off</li>
+              <li><b>Powered</b> - Pixel On</li>
+            </ul>
+			<p>This gives us a simple binary pixel, but with a really clean look, especially for Minecraft.</p>
+			
+            <div class="media-item"><img src="display.png" alt="Display"></img></div>
+
+            <p>To avoid addressing each pixel manually, a <b>Signal Strength Mapper</b> assigns a single redstone value to a face preset shape.</p>
+			<p><b>One signal input</b> → <b>One complete eye or mouth shape</b></p>
+			<p>This mapping is extremely important, to be able to store face presets easily and efficiently.</p>
+			
+            <div class="media-item"><img src="mapper.png" alt="Face Signal Mapper"></img></div>
+			
+            <div class="divider"></div>
+
+
+            <h3>Animation System</h3>
+            <p>Since animations are just a sequence of frames, we need to implement a parallel stream of signals into our three face parts, which then get mapped to the correct face.</p>
+			<p>To make this process very simple, modifiable and easily accessible I decided to use <b>Shulker Boxes filled with Music Discs</b> to store the animations.</p>
+			<p>This mapping is extremely important, to be able to store face presets easily and efficiently.</p>
+			
+            <div class="media-grid grid-2">
+              <div class="media-item"><img src="shulker.png" alt="Animation Shulker Box filled with Music Discs"></img></div>
+              <div class="media-item"><img src="shulker2.png" alt="Animation Shulker Box filled with Music Discs"></img></div>
+            </div>
+
+			<p>This system relies on a specific game mechanic:</p>
+			<p>Depending on the music disc type we can get a different signal strength output, so each music disc type will be translated into a signal strength, which will then be translated into a specific face preset by the <b>Signal Strength Mapper</b>.</p>
+			
+			<p>For example:<p>
+            <ul class="feature-list">
+              <li><b>Disc A</b> - Closed Eyes</li>
+              <li><b>Disc B</b> - Open Neutral Eyes</li>
+              <li>Alternating A and B produces a blinking animation</li>
+            </ul>
+			
+			<p>Reading the music discs sequentially produces a animation.</p>
+			
+            <div class="media-item"><img src="disc-reader.png" alt="Music Disc Reader"></img></div>
+			
+            <div class="divider"></div>
+			
+			
+            <h3>Randomisation Logic</h3>
+            <p>A dispenser selects a shulker box at random, determining which animation plays next.</p>
+			<p>This makes Grumbot <em>feel alive</em>, because his face changes from moment to moment, producing natural behavior.</p>
+			
+            <div class="divider"></div>
+			
+			
+            <h3>Final Result</h3>
+            <p>I'm extremely proud of the finished Grumbot.</p>
+			<p>The build is compact, survival-friendly, runs entirely in redstone and really makes Grumbot feel alive.</p>
+			<p>I really liked the challenge and creative solutions i had to come up with, due to the limitations of Minecrafts Redstone system.</p>
+			
+            <div class="media-item"><img src="grumbot2.gif" alt="Grumbot"></img></div>
+			
           </div>
         </div>
       </div>
@@ -107,7 +188,7 @@
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Minecraft</h4>
-                  <p class="skill-desc">Building software</p>
+                  <p class="skill-desc">Project environment</p>
                 </div>
               </div>
               <div class="skill-card">
@@ -116,7 +197,7 @@
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Minecraft Redstone</h4>
-                  <p class="skill-desc">System implementation and logic</p>
+                  <p class="skill-desc">Logic and systems</p>
                 </div>
               </div>
               <div class="skill-card">
@@ -124,7 +205,7 @@
                   <img src="../../assets/icons/axiom.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
-                  <h4 class="skill-name">Axiom (Mod)</h4>
+                  <h4 class="skill-name">Axiom [Mod]</h4>
                   <p class="skill-desc">Segment building and testing</p>
                 </div>
               </div>
@@ -147,11 +228,11 @@
             </div>
             <div class="meta-item">
               <span class="meta-label">Platform</span>
-              <span class="meta-value">Minecraft</span>
+              <span class="meta-value">Minecraft 1.20.8</span>
             </div>
             <div class="meta-item">
               <span class="meta-label">Type</span>
-              <span class="meta-value">Redstone Build</span>
+              <span class="meta-value">Redstone Creation</span>
             </div>
             <div class="meta-item">
               <span class="meta-label">Status</span>

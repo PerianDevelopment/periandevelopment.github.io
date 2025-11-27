@@ -8,6 +8,13 @@
       "featured": 0
     },
     {
+      "folder": "grumbot",
+      "title": "Grumbot",
+      "description": "Complex Minecraft Robot",
+      "hidden": false,
+      "featured": 4
+    },
+    {
       "folder": "i-want-donuts",
       "title": "I Want Donuts!",
       "description": "A challenging path to get some donuts",
@@ -27,13 +34,6 @@
       "description": "High stakes frog platformer",
       "hidden": false,
       "featured": 3
-    },
-    {
-      "folder": "grumbot",
-      "title": "Minecraft Grumbot",
-      "description": "Sentient Minecraft Robot",
-      "hidden": false,
-      "featured": 4
     },
     {
       "folder": "jumping-jelly",
