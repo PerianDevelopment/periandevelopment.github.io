@@ -109,3 +109,83 @@
 	  padding: 0;
 	  margin: 0 0 20px 0;
 	}
+	
+/* ===================== Secret Translator===================== */
+
+.secret-translator {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;       /* forces perfect vertical alignment */
+  gap: 15px;
+}
+
+/* Normalize both input + output to same metrics */
+.secret-input,
+.secret-output {
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+
+  padding: 8px 12px;         /* identical vertical padding */
+  line-height: 1.2;          /* normalize text height */
+  font-size: 15px;
+  font-family: inherit;      /* prevent font mismatch */
+  color: #eaeaea;
+
+  display: flex;             /* ensures consistent vertical centering */
+  min-width: 250px;
+  min-height: 36px;
+  height: 120px;
+  width: 45%;
+  align-items: center;
+  
+  resize: vertical;
+}
+
+.secret-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  resize: flex;
+  overflow: hidden;
+}
+
+/* Output text never dips below baseline */
+.secret-output {
+  white-space: wrap;
+}
+
+/* Arrow always centered */
+.secret-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #eaeaea;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+  min-height: 36px;
+}
+
+/* Input focus glow */
+.secret-input:focus {
+  border-color: rgba(255, 56, 46, 0.6);
+  box-shadow: 0 0 6px rgba(255, 56, 46, 0.35);
+}
+
+/* When the screen is too narrow, stack vertically */
+@media (max-width: 650px) {
+  .secret-translator {
+    flex-direction: column;  /* vertical layout */
+    align-items: stretch;    /* full width */
+  }
+  .secret-input,
+  .secret-output,
+  .secret-arrow {
+    width: 100%;
+  }
+
+  .secret-input {
+    margin-top: 0;           /* remove the upward shift on mobile */
+  }
+}
