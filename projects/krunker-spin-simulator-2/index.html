@@ -1,57 +1,26 @@
+---
+project: Krunker Spin Simulator 2
+title: Krunker Spin Simulator 2 - Perian Development
+description: The development blog for the Krunker Spin Simulator 2 project
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC ================= -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Krunker Spin Simulator 2 - Perian Development</title>
-  <meta name="description" content="The development blog for the Krunker Spin Simulator 2 project.">
-
-  <!-- ================= DARK MODE ================= -->
-  <meta name="color-scheme" content="dark">
-  <meta name="darkreader-lock">
-
-  <!-- ================= SEO ================= -->
-  <meta name="robots" content="index, follow">
-
-  <!-- ================= SOCIAL PREVIEWS ================= -->
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Krunker Spin Simulator 2 - Perian Development">
-  <meta property="og:description" content="The development blog for the Krunker Spin Simulator 2 project.">
-  <meta property="og:url" content="https://periandevelopment.github.io">
-  <meta property="og:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Krunker Spin Simulator 2 - Perian Development">
-  <meta name="twitter:description" content="The development blog for the Krunker Spin Simulator 2 project.">
-  <meta name="twitter:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- ================= ICONS ================= -->
-  <link rel="icon" href="https://periandevelopment.github.io/assets/icons/icon_shape.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://periandevelopment.github.io/assets/icons/apple-touch-icon.png">
   
-  <!-- ================= STYLE ================= -->
-  <link rel="stylesheet" href="../../css/main.css" />
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="../../js/include.js" defer></script>
-  <script src="../../js/main.js" defer></script>
+  {% include head.html %}
   
 </head>
 <body>
-<!-- ===================== HEADER ===================== -->
-  <header class="site-header"></header>
+
+	{% include header.html %}
 
 <!-- ===================== HERO ===================== -->
   <section class="hero hero--project">
     <!-- Breadcrumb Navigation -->
     <div class="breadcrumb-container">
     <nav class="breadcrumb-nav">
-      <a href="../../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/" class="breadcrumb-item clickable">
         <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <g>
       <g>
@@ -70,19 +39,19 @@
         <span>Home</span>
       </a>
       <span class="breadcrumb-separator">></span>
-      <a href="../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/projects" class="breadcrumb-item clickable">
         <span>Projects</span>
       </a>
       <span class="breadcrumb-separator">></span>
       <div class="breadcrumb-item not-clickable active">
-        <span>Krunker Spin Simulator 2</span>
+        <span>{{page.project}}</span>
       </div>
     </nav>
     </div>
     
     <div class="hero__bg">
       <video class="hero__video" autoplay muted loop playsinline>
-        <source src="../../assets/videos/hero_projects.mp4" type="video/mp4">
+        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__dark-overlay"></div>
@@ -104,7 +73,7 @@
           <!-- Project Description -->
           <div class="project-description">
             <h2>Development Journey</h2>
-            <p><b>Krunker Spin Simulator 2</b> is a full browser-playable WebGL recreation of the Krunker.io spin system, but with infinite currency and a huge collection of 1000+ available skins. It’s the second version of the Krunker spin simulator, expanding my original prototype into a polished, optimized project.</p>
+            <p><b>{{page.project}}</b> is a full browser-playable WebGL recreation of the Krunker.io spin system, but with infinite currency and a huge collection of 1000+ available skins. It’s the second version of the Krunker spin simulator, expanding my original prototype into a polished, optimized project.</p>
             <p>Developed together with <b>Simommes</b>, who handled testing, marketing, and quality control, this version focuses heavily on capturing the <em>exact</em> feel of the real Krunker.io spinner. The animations, timing, skin reveals, and visual cues are nearly indistinguishable from the real thing.</p>
 			
             <div class="media-item ar-16-9"><video src="gameplay.mp4" autoplay muted loop alt="Gameplay"></video></div>
@@ -189,12 +158,12 @@
         <div class="project-details__content">
           <!-- Project Cover Image -->
           <div class="project-cover">
-            <img src="cover.png" alt="Krunker Spin Simulator 2 Game Cover" class="project-cover__image">
+            <img src="cover.png" alt="{{page.project}} Game Cover" class="project-cover__image">
           </div>
           
           <!-- Top Row: Project Name + Store Button -->
           <div class="project-header">
-            <h1 class="project-title">Krunker Spin Simulator 2</h1>
+            <h1 class="project-title">{{page.project}}</h1>
             <a href="https://periandevelopment.itch.io/krunker" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
               Itch.io Page
             </a>
@@ -212,7 +181,7 @@
             <div class="skills-grid">
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Unity Engine</h4>
@@ -221,7 +190,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">C# Programming</h4>
@@ -230,7 +199,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/autohotkey.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/autohotkey.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">AutoHotkey</h4>
@@ -239,7 +208,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/gimp.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/gimp.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">GIMP Script-Fu</h4>
@@ -248,7 +217,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Itch.io</h4>
@@ -292,9 +261,7 @@
   </div>
 </section>
 
-  
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer"></footer>
+	{% include footer.html %}
 
 </body>
 </html>

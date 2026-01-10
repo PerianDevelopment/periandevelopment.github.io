@@ -1,57 +1,26 @@
+---
+project: Grumbot
+title: Grumbot - Perian Development
+description: The development blog for the Grumbot project
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC ================= -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Grumbot - Perian Development</title>
-  <meta name="description" content="The development blog for the Grumbot project.">
-
-  <!-- ================= DARK MODE ================= -->
-  <meta name="color-scheme" content="dark">
-  <meta name="darkreader-lock">
-
-  <!-- ================= SEO ================= -->
-  <meta name="robots" content="index, follow">
-
-  <!-- ================= SOCIAL PREVIEWS ================= -->
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Grumbot - Perian Development">
-  <meta property="og:description" content="The development blog for the Grumbot project.">
-  <meta property="og:url" content="https://periandevelopment.github.io">
-  <meta property="og:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Grumbot - Perian Development">
-  <meta name="twitter:description" content="The development blog for the Grumbot project.">
-  <meta name="twitter:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- ================= ICONS ================= -->
-  <link rel="icon" href="https://periandevelopment.github.io/assets/icons/icon_shape.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://periandevelopment.github.io/assets/icons/apple-touch-icon.png">
   
-  <!-- ================= STYLE ================= -->
-  <link rel="stylesheet" href="../../css/main.css" />
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="../../js/include.js" defer></script>
-  <script src="../../js/main.js" defer></script>
+  {% include head.html %}
   
 </head>
 <body>
-<!-- ===================== HEADER ===================== -->
-  <header class="site-header"></header>
+
+	{% include header.html %}
 
 <!-- ===================== HERO ===================== -->
   <section class="hero hero--project">
     <!-- Breadcrumb Navigation -->
     <div class="breadcrumb-container">
     <nav class="breadcrumb-nav">
-      <a href="../../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/" class="breadcrumb-item clickable">
         <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <g>
       <g>
@@ -70,19 +39,19 @@
         <span>Home</span>
       </a>
       <span class="breadcrumb-separator">></span>
-      <a href="../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/projects" class="breadcrumb-item clickable">
         <span>Projects</span>
       </a>
       <span class="breadcrumb-separator">></span>
       <div class="breadcrumb-item not-clickable active">
-        <span>Grumbot</span>
+        <span>{{page.project}}</span>
       </div>
     </nav>
     </div>
     
     <div class="hero__bg">
       <video class="hero__video" autoplay muted loop playsinline>
-        <source src="../../assets/videos/hero_projects.mp4" type="video/mp4">
+        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__dark-overlay"></div>
@@ -104,18 +73,18 @@
           <!-- Project Description -->
           <div class="project-description">
             <h2>Overview</h2>
-            <p>Grumbot is a fully animated robot built only with Minecraft redstone to be 100% survival-compatible.</p>
+            <p>{{page.project}} is a fully animated robot built only with Minecraft redstone to be 100% survival-compatible.</p>
 			<p>The concept was inspired by <b>Mumbo Jumbo’s Grumbot in Hermitcraft</b>, but much more advanced. Instead of preset faces on a timer, this version is built around a real display system with an animation pipeline. The result is expressive, modular, and compact for how much it does.</p>
 			
             <div class="media-grid grid-2">
-              <div class="media-item ar-16-9"><video src="grumbot1.mp4" autoplay muted loop alt="Grumbot Winking"></video></div>
-              <div class="media-item ar-16-9"><img src="grumbot2.gif" alt="Grumbot Checking"></img></div>
+              <div class="media-item ar-16-9"><video src="grumbot1.mp4" autoplay muted loop alt="{{page.project}} Winking"></video></div>
+              <div class="media-item ar-16-9"><img src="grumbot2.gif" alt="{{page.project}} Checking"></img></div>
             </div>
 			
             <div class="divider"></div>
             
             <h3>Face System & Expression Logic</h3>
-            <p>Grumbot’s face is split into three parts:</p>
+            <p>{{page.project}}’s face is split into three parts:</p>
             <ul class="feature-list">
               <li>Left Eye</li>
               <li>Right Eye</li>
@@ -136,7 +105,7 @@
             </ul>
 			<p>This gives us a simple binary pixel, but with a really clean look, especially for Minecraft.</p>
 			
-            <div class="media-item"><img src="grumbot-face.png" alt="Grumbot Face"></img></div>
+            <div class="media-item"><img src="grumbot-face.png" alt="{{page.project}} Face"></img></div>
 
             <p>To avoid addressing each pixel manually, a <b>Signal Strength Mapper</b> assigns a single redstone value to a face preset shape.</p>
 			<p><b>One signal input</b> → <b>One complete eye or mouth shape</b></p>
@@ -176,21 +145,21 @@
 			
             <h3>Randomisation Logic</h3>
             <p>A dispenser selects a Shulker Box at random, determining which animation plays next.</p>
-			<p>This makes Grumbot <em>feel alive</em>, because his face changes from moment to moment, producing natural behavior.</p>
+			<p>This makes {{page.project}} <em>feel alive</em>, because his face changes from moment to moment, producing natural behavior.</p>
 			
             <div class="divider"></div>
 			
 			
             <h3>Final Result</h3>
-            <p>I'm extremely proud of the finished Grumbot.</p>
+            <p>I'm extremely proud of the finished {{page.project}}.</p>
 			<p>The build is compact, survival-friendly and pushes redstone mechanics to its limits.</p>
 			<p>I really liked the challenge and creative solutions I had to come up with, due to the limitations of Minecraft's Redstone system.</p>
 			
             <div class="media-grid grid-2">
-              <div class="media-item ar-16-9"><video src="grumbot3.mp4" autoplay muted loop alt="Grumbot Eyerolling"></video></div>
-              <div class="media-item ar-16-9"><img src="grumbot4.png" alt="Grumbot"></img></div>
-              <div class="media-item ar-16-9"><img src="grumbot5.png" alt="Grumbot"></img></div>
-              <div class="media-item ar-16-9"><img src="grumbot6.png" alt="Grumbot"></img></div>
+              <div class="media-item ar-16-9"><video src="grumbot3.mp4" autoplay muted loop alt="{{page.project}} Eyerolling"></video></div>
+              <div class="media-item ar-16-9"><img src="grumbot4.png" alt="{{page.project}}"></img></div>
+              <div class="media-item ar-16-9"><img src="grumbot5.png" alt="{{page.project}}"></img></div>
+              <div class="media-item ar-16-9"><img src="grumbot6.png" alt="{{page.project}}"></img></div>
             </div>
 			
           </div>
@@ -202,12 +171,12 @@
         <div class="project-details__content">
           <!-- Project Cover Image -->
           <div class="project-cover">
-            <img src="cover.png" alt="Grumbot Cover" class="project-cover__image">
+            <img src="cover.png" alt="{{page.project}} Cover" class="project-cover__image">
           </div>
           
           <!-- Top Row: Project Name -->
           <div class="project-header">
-            <h1 class="project-title">Grumbot</h1>
+            <h1 class="project-title">{{page.project}}</h1>
           </div>
           
           <!-- Overview Section -->
@@ -222,7 +191,7 @@
             <div class="skills-grid">
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/minecraft.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/minecraft.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Minecraft</h4>
@@ -231,7 +200,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/redstone.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/redstone.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Minecraft Redstone</h4>
@@ -240,7 +209,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/axiom.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/axiom.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Axiom [Mod]</h4>
@@ -283,9 +252,7 @@
   </div>
 </section>
 
-  
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer"></footer>
+	{% include footer.html %}
 
 </body>
 </html>

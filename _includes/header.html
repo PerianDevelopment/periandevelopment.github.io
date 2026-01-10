@@ -1,0 +1,76 @@
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="container">
+    <div class="site-brand">
+      <a href="{{ site.baseurl }}/" class="logo-box">
+        <div class="logo-glow">
+          <img src="{{ site.baseurl }}/assets/icons/icon_transparent_black.svg" alt="Logo">
+        </div>
+        <div class="logo-text">
+          <h1>PERIAN</h1>
+          <h2>DEVELOPMENT</h2>
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <nav class="site-nav">
+      {% assign current = page.url | replace:'/index.html','' %}
+      {% assign current = current | prepend: site.baseurl %}
+      {% for item in site.data.navigation %}
+        {% assign target = item.url | replace:'/index.html','' %}
+        {% assign target = target | prepend: site.baseurl %}
+
+        {% if item.url == '/' %}
+          <a href="{{ site.baseurl }}/" class="{% if current == site.baseurl | append:'/' %}active{% endif %}">
+            {{ item.label }}
+          </a>
+        {% else %}
+          <a href="{{ site.baseurl }}{{ item.url }}" class="{% if current == target or current contains target %}active{% endif %}">
+            {{ item.label }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+
+    <!-- Mobile Hamburger Button -->
+    <button class="hamburger-btn" aria-label="Open menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-elements">
+    <aside class="sidebar" role="navigation" aria-label="Mobile menu">
+      <div class="sidebar-header">
+        <div class="sidebar-brand">
+          <div class="logo-glow">
+            <img src="{{ site.baseurl }}/assets/icons/icon_transparent_black.svg" alt="Logo">
+          </div>
+          <span class="sidebar-menu-text">Menu</span>
+        </div>
+        <button class="sidebar-close" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="sidebar-nav">
+        {% assign current = page.url | replace:'/index.html','' %}
+        {% assign current = current | prepend: site.baseurl %}
+        {% for item in site.data.navigation %}
+          {% assign target = item.url | replace:'/index.html','' %}
+          {% assign target = target | prepend: site.baseurl %}
+
+          {% if item.url == '/' %}
+            <a href="{{ site.baseurl }}/" class="{% if current == site.baseurl | append:'/' %}active{% endif %}">
+              {{ item.label }}
+            </a>
+          {% else %}
+            <a href="{{ site.baseurl }}{{ item.url }}" class="{% if current == target or current contains target %}active{% endif %}">
+              {{ item.label }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </aside>
+  </div>
+</header>

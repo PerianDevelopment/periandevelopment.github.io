@@ -1,0 +1,41 @@
+	<!-- ================= BASIC ================= -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>{{ page.title | default: site.title }}</title>
+	<meta name="description" content="{{ page.description | default: site.description }}">
+	
+	<!-- ================= DARK MODE ================= -->
+	<meta name="color-scheme" content="dark">
+	<meta name="darkreader-lock">
+	
+	<!-- ================= SEO ================= -->
+	<meta name="robots" content="index, follow">
+	
+	<!-- ================= SOCIAL PREVIEWS ================= -->
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{{ page.title | default: site.title }}">
+	<meta property="og:description" content="{{ page.description | default: site.description }}">
+	<meta property="og:url" content="{{ site.url }}{{site.baseurl}}">
+	<meta property="og:image" content="{{ site.url }}{{site.baseurl}}/assets/icons/og-icon.png">
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{ page.title | default: site.title }}">
+	<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+	<meta name="twitter:image" content="{{ site.url }}{{site.baseurl}}/assets/icons/og-icon.png">
+	
+	<!-- ================= ICONS ================= -->
+	<link rel="icon" href="{{site.baseurl}}/assets/icons/icon_shape.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="{{site.baseurl}}/assets/icons/apple-touch-icon.png">
+	
+	<!-- ================= STYLE ================= -->
+	<link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css" />
+	
+	<!-- ================= SCRIPT ================= -->
+	<script src="{{ site.baseurl }}/assets/js/include.js" defer></script>
+	<script src="{{ site.baseurl }}/assets/js/main.js" defer></script>
+	
+	<!-- ================= SITE-SPECIFIC ================= -->

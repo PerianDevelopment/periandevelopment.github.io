@@ -1,57 +1,26 @@
+---
+title: Projects - Perian Development
+description: Browse all projects made by Perian Development
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC ================= -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Projects - Perian Development</title>
-  <meta name="description" content="Browse all projects made by Perian Development">
-
-  <!-- ================= DARK MODE ================= -->
-  <meta name="color-scheme" content="dark">
-  <meta name="darkreader-lock">
-
-  <!-- ================= SEO ================= -->
-  <meta name="robots" content="index, follow">
-
-  <!-- ================= SOCIAL PREVIEWS ================= -->
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Projects - Perian Development">
-  <meta property="og:description" content="Browse all projects made by Perian Development">
-  <meta property="og:url" content="https://periandevelopment.github.io">
-  <meta property="og:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Projects - Perian Development">
-  <meta name="twitter:description" content="Browse all projects made by Perian Development">
-  <meta name="twitter:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- ================= ICONS ================= -->
-  <link rel="icon" href="https://periandevelopment.github.io/assets/icons/icon_shape.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://periandevelopment.github.io/assets/icons/apple-touch-icon.png">
   
-  <!-- ================= STYLE ================= -->
-  <link rel="stylesheet" href="../css/main.css" />
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="../js/include.js" defer></script>
-  <script src="../js/main.js" defer></script>
+  {% include head.html %}
+  
   <script src="projects.js" defer></script>
   
 </head>
 <body>
-<!-- ===================== HEADER ===================== -->
-  <header class="site-header"></header>
+
+	{% include header.html %}
 
 <!-- ===================== HERO ===================== -->
   <section class="hero hero--projects">
     <div class="hero__bg">
       <video class="hero__video" autoplay muted loop playsinline>
-        <source src="../assets/videos/hero_projects.mp4" type="video/mp4">
+        <source src="{{site.baseurl}}//assets/videos/hero_projects.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__dark-overlay"></div>
@@ -86,9 +55,7 @@
     </div>
   </section>
 
-  
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer"></footer>
+	{% include footer.html %}
 
 </body>
 </html>

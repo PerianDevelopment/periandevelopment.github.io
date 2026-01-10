@@ -1,57 +1,26 @@
+---
+project: Dailys
+title: Dailys - Perian Development
+description: The development blog for the Dailys project
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC ================= -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Dailys - Perian Development</title>
-  <meta name="description" content="The development blog for the Dailys project.">
-
-  <!-- ================= DARK MODE ================= -->
-  <meta name="color-scheme" content="dark">
-  <meta name="darkreader-lock">
-
-  <!-- ================= SEO ================= -->
-  <meta name="robots" content="index, follow">
-
-  <!-- ================= SOCIAL PREVIEWS ================= -->
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Dailys - Perian Development">
-  <meta property="og:description" content="The development blog for the Dailys project.">
-  <meta property="og:url" content="https://periandevelopment.github.io">
-  <meta property="og:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dailys - Perian Development">
-  <meta name="twitter:description" content="The development blog for the Dailys project.">
-  <meta name="twitter:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- ================= ICONS ================= -->
-  <link rel="icon" href="https://periandevelopment.github.io/assets/icons/icon_shape.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://periandevelopment.github.io/assets/icons/apple-touch-icon.png">
   
-  <!-- ================= STYLE ================= -->
-  <link rel="stylesheet" href="../../css/main.css" />
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="../../js/include.js" defer></script>
-  <script src="../../js/main.js" defer></script>
+  {% include head.html %}
   
 </head>
 <body>
-<!-- ===================== HEADER ===================== -->
-  <header class="site-header"></header>
+
+	{% include header.html %}
 
 <!-- ===================== HERO ===================== -->
   <section class="hero hero--project">
     <!-- Breadcrumb Navigation -->
     <div class="breadcrumb-container">
     <nav class="breadcrumb-nav">
-      <a href="../../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/" class="breadcrumb-item clickable">
         <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <g>
       <g>
@@ -70,19 +39,19 @@
         <span>Home</span>
       </a>
       <span class="breadcrumb-separator">></span>
-      <a href="../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/projects" class="breadcrumb-item clickable">
         <span>Projects</span>
       </a>
       <span class="breadcrumb-separator">></span>
       <div class="breadcrumb-item not-clickable active">
-        <span>Dailys</span>
+        <span>{{page.project}}</span>
       </div>
     </nav>
     </div>
     
     <div class="hero__bg">
       <video class="hero__video" autoplay muted loop playsinline>
-        <source src="../../assets/videos/hero_projects.mp4" type="video/mp4">
+        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__dark-overlay"></div>
@@ -104,7 +73,7 @@
           <!-- Project Description -->
           <div class="project-description">
             <h2>Overview</h2>
-            <p>Dailys is a simple website with a handpicked collection of daily games you can play once per day. The site features various categories and a search function to quickly find specific games. You can also check off games by clicking on them, this checklist resets automatically every day. When you check off all games of a section, the section itself is marked as completed.</p>
+            <p>{{page.project}} is a simple website with a handpicked collection of daily games you can play once per day. The site features various categories and a search function to quickly find specific games. You can also check off games by clicking on them, this checklist resets automatically every day. When you check off all games of a section, the section itself is marked as completed.</p>
 
             <h3>How it works</h3>
             <ul class="feature-list">
@@ -143,12 +112,12 @@
         <div class="project-details__content">
           <!-- Project Cover Image -->
           <div class="project-cover">
-            <img src="cover.png" alt="Dailys Cover" class="project-cover__image">
+            <img src="cover.png" alt="{{page.project}} Cover" class="project-cover__image">
           </div>
           
           <!-- Top Row: Project Name + Store Button -->
           <div class="project-header">
-            <h1 class="project-title">Dailys</h1>
+            <h1 class="project-title">{{page.project}}</h1>
             <a href="https://periandevelopment.github.io/Dailys/" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
               Open Website
             </a>
@@ -166,7 +135,7 @@
             <div class="skills-grid">
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/html.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/html.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">HTML</h4>
@@ -175,7 +144,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/css.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/css.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">CSS</h4>
@@ -184,7 +153,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/javascript.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/javascript.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">JS</h4>
@@ -193,7 +162,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">JSON</h4>
@@ -202,7 +171,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/github.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/github.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">GitHub Pages</h4>
@@ -241,9 +210,7 @@
   </div>
 </section>
 
-  
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer"></footer>
+	{% include footer.html %}
 
 </body>
 </html>

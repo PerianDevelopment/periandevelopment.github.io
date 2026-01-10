@@ -1,57 +1,26 @@
+---
+project: Jumping Jelly
+title: Jumping Jelly - Perian Development
+description: The development blog for the Jumping Jelly project
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ================= BASIC ================= -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Jumping Jelly - Perian Development</title>
-  <meta name="description" content="The development blog for the Jumping Jelly project.">
-
-  <!-- ================= DARK MODE ================= -->
-  <meta name="color-scheme" content="dark">
-  <meta name="darkreader-lock">
-
-  <!-- ================= SEO ================= -->
-  <meta name="robots" content="index, follow">
-
-  <!-- ================= SOCIAL PREVIEWS ================= -->
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Jumping Jelly - Perian Development">
-  <meta property="og:description" content="The development blog for the Jumping Jelly project.">
-  <meta property="og:url" content="https://periandevelopment.github.io">
-  <meta property="og:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Jumping Jelly - Perian Development">
-  <meta name="twitter:description" content="The development blog for the Jumping Jelly project.">
-  <meta name="twitter:image" content="https://periandevelopment.github.io/assets/icons/og-icon.png">
-
-  <!-- ================= ICONS ================= -->
-  <link rel="icon" href="https://periandevelopment.github.io/assets/icons/icon_shape.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="https://periandevelopment.github.io/assets/icons/apple-touch-icon.png">
   
-  <!-- ================= STYLE ================= -->
-  <link rel="stylesheet" href="../../css/main.css" />
-
-  <!-- ================= SCRIPTS ================= -->
-  <script src="../../js/include.js" defer></script>
-  <script src="../../js/main.js" defer></script>
+  {% include head.html %}
   
 </head>
 <body>
-<!-- ===================== HEADER ===================== -->
-  <header class="site-header"></header>
+
+	{% include header.html %}
 
 <!-- ===================== HERO ===================== -->
   <section class="hero hero--project">
     <!-- Breadcrumb Navigation -->
     <div class="breadcrumb-container">
     <nav class="breadcrumb-nav">
-      <a href="../../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/" class="breadcrumb-item clickable">
         <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
     <g>
       <g>
@@ -70,19 +39,19 @@
         <span>Home</span>
       </a>
       <span class="breadcrumb-separator">></span>
-      <a href="../" class="breadcrumb-item clickable">
+      <a href="{{site.baseurl}}/projects" class="breadcrumb-item clickable">
         <span>Projects</span>
       </a>
       <span class="breadcrumb-separator">></span>
       <div class="breadcrumb-item not-clickable active">
-        <span>Jumping Jelly</span>
+        <span>{{page.project}}</span>
       </div>
     </nav>
     </div>
     
     <div class="hero__bg">
       <video class="hero__video" autoplay muted loop playsinline>
-        <source src="../../assets/videos/hero_projects.mp4" type="video/mp4">
+        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
       </video>
     </div>
     <div class="hero__dark-overlay"></div>
@@ -104,7 +73,7 @@
           <!-- Project Description -->
           <div class="project-description">
             <h2>Development Journey</h2>
-            <p>Jumping Jelly is a Windows PC platformer created for <b>Mini Jam 106</b> (themes: <em>Frog</em> and <em>Limited Time</em>). Heavily inspired by <b>Jump King</b>, the goal is simple: climb a tall tree and reach the princess waiting at the top. The execution, however, is intentionally punishing. Every jump is a commitment, every fall is costly, and every decision matters.</p>
+            <p>{{page.project}} is a Windows PC platformer created for <b>Mini Jam 106</b> (themes: <em>Frog</em> and <em>Limited Time</em>). Heavily inspired by <b>Jump King</b>, the goal is simple: climb a tall tree and reach the princess waiting at the top. The execution, however, is intentionally punishing. Every jump is a commitment, every fall is costly, and every decision matters.</p>
 			<p>This was a <b>solo project</b> built within <b>72 hours</b>, following the strict rules of the jam, including theme reveal only at the start. Planning, prototyping, designing, and finishing the game all had to happen inside the 3 day window.</p>
 			
             <div class="media-item"><img src="jumping.gif" alt="Frog Jumping"></img></div>
@@ -173,12 +142,12 @@
         <div class="project-details__content">
           <!-- Project Cover Image -->
           <div class="project-cover">
-            <img src="cover.png" alt="Jumping Jelly Game Cover" class="project-cover__image">
+            <img src="cover.png" alt="{{page.project}} Game Cover" class="project-cover__image">
           </div>
           
           <!-- Top Row: Project Name + Store Button -->
           <div class="project-header">
-            <h1 class="project-title">Jumping Jelly</h1>
+            <h1 class="project-title">{{page.project}}</h1>
             <a href="https://periandevelopment.itch.io/jumping-jelly" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
               Itch.io Page
             </a>
@@ -187,7 +156,7 @@
           <!-- Overview Section -->
           <div class="overview-section">
             <h3>Overview</h3>
-            <p class="overview-text">Jumping Jelly is a platformer created for <b>Mini Jam 106</b> with the themes <em>Frog</em> and <em>Limited Time</em>. Try to climb to the princess at the top with high stakes and tension platforming!</p>
+            <p class="overview-text">{{page.project}} is a platformer created for <b>Mini Jam 106</b> with the themes <em>Frog</em> and <em>Limited Time</em>. Try to climb to the princess at the top with high stakes and tension platforming!</p>
           </div>
 		  
           <!-- Skills/Tools Section -->
@@ -196,7 +165,7 @@
             <div class="skills-grid">
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Unity Engine</h4>
@@ -205,7 +174,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/code.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">C# Programming</h4>
@@ -214,7 +183,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/aseprite.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/aseprite.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Aseprite</h4>
@@ -223,7 +192,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/trello.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/trello.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Trello</h4>
@@ -232,7 +201,7 @@
               </div>
               <div class="skill-card">
                 <div class="skill-icon-container">
-                  <img src="../../assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                  <img src="{{site.baseurl}}/assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
                 </div>
                 <div class="skill-content">
                   <h4 class="skill-name">Itch.io</h4>
@@ -298,9 +267,7 @@
   </div>
 </section>
 
-  
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer"></footer>
+	{% include footer.html %}
 
 </body>
 </html>
