@@ -1,51 +1,51 @@
 {
   "projects": [
     {
-      "folder": "dailys",
-      "title": "Dailys",
-      "description": "Handpicked collection of daily games",
+      "folder": "blicky-extendo-room",
+      "title": "Blicky Extendo Room",
+      "description": "A 3D environment design project",
       "hidden": false,
       "featured": 0
     },
     {
-      "folder": "grumbot",
-      "title": "Grumbot",
-      "description": "Animated Minecraft Robot",
-      "hidden": false,
-      "featured": 4
-    },
-    {
-      "folder": "i-want-donuts",
-      "title": "I Want Donuts!",
-      "description": "A challenging path to get some donuts",
+      "folder": "dailys",
+      "title": "Dailys",
+      "description": "A website to keep track of daily games",
       "hidden": false,
       "featured": 1
     },
     {
-      "folder": "krunker-spin-simulator-2",
-      "title": "Krunker Spin Simulator 2",
-      "description": "Infinite wheel of fortune simulation",
+      "folder": "grumbot",
+      "title": "Grumbot",
+      "description": "Advanced redstone based Minecraft Robot",
+      "hidden": false,
+      "featured": 5
+    },
+    {
+      "folder": "i-want-donuts",
+      "title": "I Want Donuts!",
+      "description": "A 3D browser puzzle game about donuts",
       "hidden": false,
       "featured": 2
     },
     {
-      "folder": "jumping-jelly",
-      "title": "Jumping Jelly",
-      "description": "High stakes frog platformer",
+      "folder": "krunker-spin-simulator-2",
+      "title": "Krunker Spin Simulator 2",
+      "description": "Remake of the Krunker.io spinner in Unity",
       "hidden": false,
       "featured": 3
     },
     {
       "folder": "jumping-jelly",
       "title": "Jumping Jelly",
-      "description": "High stakes frog platformer",
-      "hidden": true,
-      "featured": 5
+      "description": "2D platformer about jumping to the top",
+      "hidden": false,
+      "featured": 4
     },
     {
       "folder": "jumping-jelly",
       "title": "Jumping Jelly",
-      "description": "High stakes frog platformer",
+      "description": "2D platformer about reaching the top",
       "hidden": true,
       "featured": 6
     },

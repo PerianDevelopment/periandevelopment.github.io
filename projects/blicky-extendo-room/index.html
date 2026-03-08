@@ -1,0 +1,319 @@
+---
+project: Blicky Extendo Room
+title: Blicky Extendo Room - Perian Development
+description: An immersive 3D interior environment featuring a dark, moody preparation room. Features custom-modeled weapons and assets, dynamic atmospheric lighting<!--, and a fully interactive WebGL experience-->.
+project_url: https://periandevelopment.github.io/projects/blicky-extendo-room/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% include head.html %}
+  
+	<link rel="stylesheet" href="blicky_extendo.css" />
+
+</head>
+<body>
+
+	{% include header.html %}
+
+<!-- ===================== HERO ===================== -->
+  <section class="hero hero--project">
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav">
+      <a href="{{site.baseurl}}/" class="breadcrumb-item clickable">
+        <svg viewBox="0 0 495.398 495.398" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <g>
+        <g>
+          <path d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391
+            v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158
+            c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747
+            c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z"/>
+          <path d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401
+            c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79
+            c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z"/>
+        </g>
+      </g>
+    </g>
+  </svg>
+        <span>Home</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <a href="{{site.baseurl}}/projects" class="breadcrumb-item clickable">
+        <span>Projects</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <div class="breadcrumb-item not-clickable active">
+        <span>{{page.project}}</span>
+      </div>
+    </nav>
+    </div>
+    
+    <div class="hero__bg">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero__dark-overlay"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__grid"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__filter"></div>
+  </section>
+
+<!-- ===================== PROJECT DETAILS ===================== -->
+<section class="project-details">
+  <div class="project-details__bg"></div>
+  <div class="container">
+    <div class="project-details__grid">
+      
+      <!-- Left Column -->
+      <div class="project-details__column">
+        <div class="project-details__content">
+          <!-- Project Description -->
+          <div class="project-description">
+            <h2>{{page.project}}</h2>
+            <p>The <b>{{page.project}}</b> is a 3D environment created for the <em>3D Experience Design</em> course.</p>
+            <p>I worked in a team of three with Leon and Raffael to design a fight preparation room with a dark, moody style inspired by Call of Duty: Zombies. Each team member was responsible for three unique 3D models.</p>
+            
+            <div class="media-grid grid-2">
+              <div class="media-item ar-16-9"><video src="rack.mp4" autoplay muted loop alt="Looking at the weapon rack"></video></div>
+              <div class="media-item ar-16-9"><video src="workbench.mp4" autoplay muted loop alt="Looking at the workbench"></video></div>
+            </div>
+
+            <p>Our workflow involved modeling in Blender, texturing in Adobe Substance 3D Painter, and final assembly and lighting in Unity.</p>
+          
+            <div class="divider"></div>
+
+            <h3>Planning</h3>
+            <p>We brainstormed as a group to find a concept everyone was happy with. Based on these ideas, we built a moodboard and Raffael created the concept art below to guide the visual direction of the room.</p>
+
+            <div class="media-grid grid-2">
+              <div class="media-item"><img src="moodboard.png" alt="Mood Board"></img></div>
+              <div class="media-item"><img src="concept.png" alt="Concept Art"></img></div>
+            </div>
+
+
+            <p>Once the concept was solidified, we divided the modeling tasks:</p>
+            <ul class="feature-list">
+                <li><strong>My models:</strong> Double Barrel Shotgun, Rusty Metal Shelf, Weapon Rack</li>
+                <li><strong>Leon's models:</strong> AK-47, Baseball Bat, Safe</li>
+                <li><strong>Raffael's models:</strong> Uzi, Weapon Bench, Metal Door</li>
+            </ul>
+          
+            <div class="divider"></div>
+          
+            <h3>Technical Setup & Workflow</h3>
+            <p>To keep the project organized and allow for simultaneous work, we set up a GitHub repository and created a blockout of the scene in Unity.</p>
+            <div class="media-item" style="max-width:350px;"><img src="blockout.png" alt="First blockout"></img></div>
+            <p>We relied heavily on Prefabs for the layout, this was a deliberate choice to prevent Unity's scene files (which are saved as bytecode) from breaking when multiple people tried to sync their work at the same time. This setup made the collaborative process much smoother and avoided merge conflicts.</p>
+          
+
+            <div class="divider"></div>
+          
+            <h3>Rusty Metal Shelf</h3>
+            <p>I started with the Metal Shelf because the geometry was simple. This allowed me to learn the texturing process with Substance Painter before moving on to more complex models.</p>
+          
+            <div class="media-grid grid-3">
+                <div class="media-item"><img src="shelf_mesh.png" alt="Shelf Mesh"></img></div>
+                <div class="media-item"><img src="shelf_wireframe.png" alt="Shelf Wireframe"></img></div>
+                <div class="media-item" style="object-fit: contain;"><img src="shelf_stats.png" alt="Shelf Statistics"></img></div>
+            </div>
+          
+            <p>Creating materials with Substance Painter was suprisingly easy and fun. I had a blast while creating the materials and i am very proud of the result.</p>
+          
+            <div class="media-grid grid-2">
+                <div class="media-item"><img src="shelf_material.gif" alt="Shelf Material"></img></div>
+                <div class="media-item"><img src="shelf_final.png" alt="Finished Shelf"></img></div>
+            </div>
+
+            <div class="divider"></div>
+          
+            <h3>Double Barrel Shotgun</h3>
+            <p>Next was the Double Barrel Shotgun. This was a much bigger challenge. Modeling the organic, free-flowing curves of the wooden handle was a new experience for me, but I am really happy with the final result.</p>
+          
+            <div class="media-grid grid-3-special">
+                <div class="media-item"><img src="shotgun_mesh.png" alt="Shotgun Mesh"></img></div>
+                <div class="media-item"><img src="shotgun_wireframe.png" alt="Shotgun Wireframe"></img></div>
+                <div class="media-item" style="object-fit: contain;"><img src="shotgun_stats.png" alt="Shotgun Statistics"></img></div>
+            </div>
+          
+            <p>I focused the materials on making the gun look rundown and old to fit the zombies vibe of the environment.</p>
+          
+            <div class="media-item"><img src="shotgun_material.gif" alt="Shotgun Material"></img></div>
+            <!-- <div class="media-item"><img src="shotgun_final.png" alt="Finished Shotgun"></img></div> -->
+          
+
+            <div class="divider"></div>
+
+            <h3>Weapon Rack</h3>
+            <p>Next was the Weapon Rack. This was a simpler task, but it still required attention to detail to ensure it fit well within the overall environment.</p>
+          
+            <div class="media-grid grid-3">
+                <div class="media-item"><img src="rack_mesh.png" alt="Rack Mesh"></img></div>
+                <div class="media-item"><img src="rack_wireframe.png" alt="Rack Wireframe"></img></div>
+                <div class="media-item" style="object-fit: contain;"><img src="rack_stats.png" alt="Rack Statistics"></img></div>
+            </div>
+          
+            <p>The rack was designed to hold various weapons and props, contributing to the immersive nature of the scene.</p>
+          
+            <div class="media-grid grid-2">
+                <div class="media-item"><img src="rack_material.gif" alt="Rack Material"></img></div>
+                <div class="media-item"><img src="rack_final.png" alt="Finished Rack"></img></div>
+            </div>
+          
+            <div class="divider"></div>
+          
+            <h3>Environment Design</h3>
+            <p>After the core models were finished, we decorated the room with our assets and additional props to make the space feel immersive. Since the room is very dark, we focused on choosing assets that integrated well and felt performant.</p>
+          
+            <div class="media-grid grid-2">
+              <div class="media-item ar-16-9"><video src="camera.mp4" autoplay muted loop alt="Camera following player"></video></div>
+              <div class="media-item ar-16-9"><video src="door.mp4" autoplay muted loop alt="Looking at the door"></video></div>
+            </div>
+          
+            <p>To make the scene feel like a living environment rather than a static one, theres several animated elements:</p>
+            <ul class="feature-list">
+                <li><strong>Flickering Light:</strong> A randomly flickering lamp to create tension</li>
+                <li><strong>Particle System:</strong> Dust particles fly around</li>
+                <li><strong>CCTV System:</strong> An animated camera that tracks the player as they move</li>
+            </ul>
+
+            
+            
+            <div class="divider"></div>
+            
+            <h3>Final Product<!-- & WebGL Integration--></h3>
+            <p>The final room successfully captures the dark atmosphere we were aiming for and matches our original creative vision for the 3D Experience Design project. We also recieved an amazing grade from the professor for our environment.</p>
+            
+            <div class="media-item ar-16-9"><video src="room.mp4" autoplay muted loop alt="360 degree view of the room"></video></div>
+            
+            <!--
+            <p>I also developed a WebGL build so the room could be accessed directly in a browser. This was a great way to show the project to others and get quick feedback without requiring anyone to install the full Unity project.</p>
+            -->
+
+            <!--
+            <a href="{{page.project_url}}" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
+              Open WebGL Build
+            </a>
+            -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right Column -->
+      <div class="project-details__column">
+        <div class="project-details__content">
+          <!-- Project Cover Image -->
+          <div class="project-cover">
+            <img src="cover.png" alt="{{page.project}} Game Cover" class="project-cover__image">
+          </div>
+          
+          <!-- Top Row: Project Name + Store Button -->
+          <div class="project-header">
+            <h1 class="project-title">{{page.project}}</h1>
+            
+            <!--
+            <a href="{{page.project_url}}" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
+              Open WebGL Build
+            </a>
+            -->
+
+          </div>
+          
+          <!-- Overview Section -->
+          <div class="overview-section">
+            <h3>Overview</h3>
+            <p class="overview-text">{{page.description}}</p>
+          </div>
+          
+          <!-- Skills/Tools Section -->
+          <div class="skills-section">
+            <h3>Used Skills/Tools</h3>
+            <div class="skills-grid">
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="{{site.baseurl}}/assets/icons/blender.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Blender</h4>
+                  <p class="skill-desc">Modeling</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="{{site.baseurl}}/assets/icons/substance.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Substance 3D Painter</h4>
+                  <p class="skill-desc">Texturing and Material Design</p>
+                </div>
+              </div>
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="{{site.baseurl}}/assets/icons/unity.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Unity Engine</h4>
+                  <p class="skill-desc">Environment Assembly</p>
+                </div>
+              </div>
+              <!--
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="{{site.baseurl}}/assets/icons/itch.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Itch.io</h4>
+                  <p class="skill-desc">Interactive Build Hosting</p>
+                </div>
+              </div>
+              -->
+              <div class="skill-card">
+                <div class="skill-icon-container">
+                  <img src="{{site.baseurl}}/assets/icons/discord.svg" width="24" height="24" alt="Icon" style="filter: brightness(0) invert(1);">
+                </div>
+                <div class="skill-content">
+                  <h4 class="skill-name">Discord</h4>
+                  <p class="skill-desc">Team Communication</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Meta Information -->
+          <div class="project-meta">
+            <div class="meta-item">
+              <span class="meta-label">Year</span>
+              <span class="meta-value">2026</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Team Size</span>
+              <span class="meta-value">3</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Project Type</span>
+              <span class="meta-value">University Project</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Environment Type</span>
+              <span class="meta-value">3D Environment</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Status</span>
+              <span class="meta-value status-released">Finished</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+	{% include footer.html %}
+
+</body>
+</html>
