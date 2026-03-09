@@ -33,18 +33,19 @@
 *,
 *::before,
 *::after { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-html,body,div,h1,h2,h3,h4,p { margin:0; padding:0; border:0; }
-html, body {font-family: var(--font-sans); background: var(--bg); color: var(--white); font-size: var(--base-font-size); line-height: var(--line-height-base); -webkit-text-size-adjust:100%; }
-img, video { display:block; max-width:100%; height:auto; }
-:focus { outline: none; }
-a { color: inherit; text-decoration: none; }
-.container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-h1,h2,h3,h4 { color:var(--white); line-height:1.05; letter-spacing: -0.02em; margin:0 0 12px 0; }
-h1 { font-weight: var(--fw-bold); font-size: clamp(28px, 6.5vw, 64px); }
-h2 { font-weight: var(--fw-semibold); font-size: clamp(22px, 4.4vw, 40px); }
-h3 { font-weight: var(--fw-medium); font-size: clamp(18px, 3.2vw, 28px); }
-h4 { font-weight: var(--fw-medium); font-size: 18px; }
-p { font-size: 15px; color: #eaeaea; }
+html,body,div,h1,h2,h3,h4,p{margin:0;padding:0;border:0;}
+html,body{font-family:var(--font-sans);background:var(--bg);color:var(--white);font-size:var(--base-font-size);line-height:var(--line-height-base);-webkit-text-size-adjust:100%;}
+img,video{display:block;max-width:100%;height:auto;}
+:focus{outline:none;}
+a{color:inherit;text-decoration:none;}
+.container{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+h1,h2,h3,h4{color:var(--white);line-height:1.05;letter-spacing:-0.02em;margin:0 0 12px 0;}
+h1{font-weight:var(--fw-bold);font-size:clamp(28px,6.5vw,64px);}
+h2{font-weight:var(--fw-bold);font-size:clamp(22px,4.4vw,40px);}
+h3{font-weight:var(--fw-semibold);font-size:clamp(18px,3.2vw,28px);}
+h4{font-weight:var(--fw-semibold);font-size:clamp(14px,2vw,16px); margin-top: 32px;}
+h4 .red{color:var(--brand-accent);}
+p{font-size:15px;color:#eaeaea;}
 .site-header {
 position: fixed;
 width:100%;
@@ -2024,15 +2025,13 @@ margin: 0;
 .media-item + p,
 .media-item + h1,
 .media-item + h2,
-.media-item + h3,
-.media-item + h4{
+.media-item + h3{
   margin-top: 18px;
 }
 .media-grid + p,
 .media-grid + h1,
 .media-grid + h2,
-.media-grid + h3,
-.media-grid + h4{
+.media-grid + h3{
   margin-top: 18px;
 }
 
