@@ -1,61 +1,125 @@
 ---
-title: Projects - Perian Development
+title: Projects 
 description: Browse all projects made by Perian Development
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   {% include head.html %}
-  
-  <script src="projects.js" defer></script>
-  
 </head>
 <body>
 
-	{% include header.html %}
+  {% include header.html %}
 
-<!-- ===================== HERO ===================== -->
-  <section class="hero hero--projects">
-    <div class="hero__bg">
-      <video class="hero__video" autoplay muted loop playsinline>
-        <source src="{{site.baseurl}}/assets/videos/hero_projects.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="hero__dark-overlay"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__grid"></div>
-    <div class="hero__vignette"></div>
-    <div class="hero__filter"></div>
+  {% include hero.html style="medium" %}
 
-    <div class="hero__content container">
-      <h1 class="title">Explore the <span class="text-highlight">Projects</span></h1>
-      <p class="subtitle">
-        I'm always working on something new, from small prototypes to fully realized games.  
-        Explore everything I've built and see what's next in development.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===================== PROJECT CARDS ===================== -->
-  <section class="section all-projects">
-    <div class="container reveal">
-      <div class="search-container">
-		<div class="search-bar">
-			<input type="text" id="projectSearch" placeholder="Search projects..." />
-			<div class="search-divider"></div>
-			<p class="project-count">Showing all <span class="count-number">0</span> projects</p>
-		</div>
-	  </div>
-
-      <div class="cards" id="projectsContainer">
-        <!-- Project cards will be dynamically loaded here -->
+<!-- ===================== PROJECT CARDS ===================== -->
+<section class="section all-projects">
+  <div class="container reveal">
+    <div class="search-container">
+      <div class="search-bar">
+        <input type="text" id="projectSearch" placeholder="Search projects or tags..." />
+        <div class="search-divider"></div>
+        <p class="project-count">Showing all <span class="count-number">0</span> projects</p>
       </div>
     </div>
-  </section>
 
-	{% include footer.html %}
+    <div class="cards" id="projectsContainer">
+      {% assign projects = site.pages | where:"type","project" | sort:"order" | reverse %}
+      {% for project in projects %}
+        {% if project.displayed != false %}
+          <a href="{{ site.baseurl }}/projects/{{ project.path }}" class="card-top" data-title="{{ project.title | downcase }}" data-description="{{ project.description_short | downcase }}" data-tags="{{ project.tags | join:',' | downcase }}">
+            <div class="card-top__image" style="background-image: url('{{ site.baseurl }}/projects/{{ project.path }}/cover.png');"></div>
+            <div class="card-top__overlay"></div>
+            <div class="card-top__text">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description_short }}</p>
+            </div>
+            <div class="card-top__icon">
+              <span>⧉</span>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+        
+      <!-- Hidden by default -->
+      <div class="no-projects hidden">  
+        <h3>No Results Found</h3>
+        <p>Try adjusting your search terms or browse all projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+
+<script>
+  // ===================== Client-side search =====================
+  const searchInput = document.getElementById('projectSearch');
+  const container = document.getElementById('projectsContainer');
+  const cards = Array.from(container.querySelectorAll('.card-top'));
+  const countElement = document.querySelector('.project-count');
+  const noResultsDiv = container.querySelector('.no-projects');
+
+  function updateDisplay(shownCount) {
+    const total = cards.length;
+
+    // Handle the "No Results" message
+    if (noResultsDiv) {
+      if (shownCount === 0) {
+        noResultsDiv.classList.remove('hidden');
+        noResultsDiv.style.display = 'block';
+        console.log("Showing 'No Results' div");
+      } else {
+        noResultsDiv.classList.add('hidden');
+        noResultsDiv.style.display = 'none';
+      }
+    }
+
+    // Handle the text counter
+    if (countElement) {
+      if (shownCount === total) {
+        countElement.innerHTML = `Showing all <span class="count-number">${total}</span> projects`;
+      } else {
+        countElement.innerHTML = `Found <span class="count-number">${shownCount}</span> of <span class="count-number">${total}</span> projects`;
+      }
+    }
+  }
+
+  function filterCards() {
+    const term = searchInput.value.trim().toLowerCase();
+    let shown = 0;
+
+    cards.forEach(card => {
+      const title = (card.dataset.title || '').toLowerCase();
+      const desc = (card.dataset.description || '').toLowerCase();
+      const tags = (card.dataset.tags || '').toLowerCase();
+
+      if (title.includes(term) || desc.includes(term) || tags.includes(term)) {
+        card.style.display = '';
+        shown++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    console.log(`Searching for: "${term}" | Found: ${shown}`);
+    updateDisplay(shown);
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  filterCards();
+
+  // ===================== LOAD SEARCH FROM URL =====================
+  const params = new URLSearchParams(window.location.search);
+  const urlSearch = params.get('search');
+
+  if (urlSearch) {
+      searchInput.value = urlSearch;
+      filterCards(urlSearch);
+  }
+</script>
 
 </body>
 </html>

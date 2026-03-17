@@ -1,0 +1,286 @@
+{% case include.style %}
+{% when 'large' %}
+{% assign h_class = "" %}
+{% assign h_title = "Perian Development" %}
+{% assign h_sub = "Endless fun, fueled by a passion for gaming" %}
+{% when 'medium' %}
+{% assign h_class = "hero--projects" %}
+{% assign h_title = 'Explore the <span class="text-highlight">Projects</span>' %}
+{% assign h_sub = "I'm always working on something new, from small prototypes to fully realized games." %}
+{% when 'slim' %}
+{% assign h_class = "hero--project" %}
+{% when 'minimal' %}
+{% assign h_class = "tos-hero" %}
+{% endcase %}
+
+{% if include.style == 'minimal' %}
+<div class="{{ h_class }}">
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav">
+      <a href="{{ site.baseurl }}/" class="breadcrumb-item clickable">
+        <svg viewBox="0 0 495.398 495.398" fill="currentColor" width="14" height="14">
+          <path
+            d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z" />
+          <path
+            d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <div class="breadcrumb-item not-clickable active">
+        <span>{{ page.title }}</span>
+      </div>
+    </nav>
+  </div>
+</div>
+{% else %}
+<style>
+  .hero__video {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+    background: black;
+  }
+
+  .hero__video.fading {
+    opacity: 0;
+  }
+
+  /* Ensure video doesn't show placeholder while loading */
+  .hero__video::-webkit-media-controls {
+    display: none !important;
+  }
+</style>
+
+<section class="hero {{ h_class }}">
+  {% if include.style == 'slim' %}
+  <div class="breadcrumb-container">
+    <nav class="breadcrumb-nav">
+      <a href="{{ site.baseurl }}/" class="breadcrumb-item clickable">
+        <svg viewBox="0 0 495.398 495.398" fill="currentColor" width="14" height="14">
+          <path
+            d="M487.083,225.514l-75.08-75.08V63.704c0-15.682-12.708-28.391-28.413-28.391c-15.669,0-28.377,12.709-28.377,28.391v29.941L299.31,37.74c-27.639-27.624-75.694-27.575-103.27,0.05L8.312,225.514c-11.082,11.104-11.082,29.071,0,40.158c11.087,11.101,29.089,11.101,40.172,0l187.71-187.729c6.115-6.083,16.893-6.083,22.976-0.018l187.742,187.747c5.567,5.551,12.825,8.312,20.081,8.312c7.271,0,14.541-2.764,20.091-8.312C498.17,254.586,498.17,236.619,487.083,225.514z" />
+          <path
+            d="M257.561,131.836c-5.454-5.451-14.285-5.451-19.723,0L72.712,296.913c-2.607,2.606-4.085,6.164-4.085,9.877v120.401c0,28.253,22.908,51.16,51.16,51.16h81.754v-126.61h92.299v126.61h81.755c28.251,0,51.159-22.907,51.159-51.159V306.79c0-3.713-1.465-7.271-4.085-9.877L257.561,131.836z" />
+        </svg>
+        <span>Home</span>
+      </a>
+      <span class="breadcrumb-separator">></span>
+      <a href="{{ site.baseurl }}/projects" class="breadcrumb-item clickable"><span>Projects</span></a>
+      <span class="breadcrumb-separator">></span>
+      <div class="breadcrumb-item not-clickable active"><span>{{ data.title }}</span></div>
+    </nav>
+  </div>
+  {% endif %}
+
+  <div class="hero__bg">
+    <video id="heroRandomVideo" class="hero__video fading" autoplay muted playsinline></video>
+  </div>
+
+  <div class="hero__dark-overlay"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__grid"></div>
+  <div class="hero__vignette"></div>
+  <div class="hero__filter"></div>
+
+  {% if include.style != 'slim' %}
+  <div class="hero__content container">
+    {% if include.style == 'large' %}<div class="eyebrow">Welcome to</div>{% endif %}
+    <h1 class="title">{{ h_title }}</h1>
+    <p class="subtitle">{{ h_sub }}</p>
+    {% if include.style == 'large' %}
+    <div class="cta-row">
+      <a href="{{ site.baseurl }}/projects" class="btn btn-primary glow">Explore Projects</a>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const videoList = [
+      {% for file in site.static_files %}
+        {% if file.path contains '/assets/videos/hero/' %}
+          "{{ site.baseurl }}{{ file.path }}",
+        {% endif %}
+      {% endfor %}
+    ];
+
+    console.log("Video list:", videoList);
+
+    const videoEl = document.getElementById("heroRandomVideo");
+    if (!videoEl || videoList.length === 0) {
+      console.warn("No video element found or no videos in list");
+      return;
+    }
+
+    // State management
+    let currentIndex = -1;
+    let isFirstPlay = true;
+    let activeTimers = new Set(); // Track all active timers
+    let brokenVideos = new Set(); // Skip videos that fail to load
+    let preloadedVideos = new Map(); // Cache preloaded videos
+    
+    // Cleanup helper
+    const clearAllTimers = () => {
+      activeTimers.forEach(timer => clearInterval(timer));
+      activeTimers.clear();
+    };
+    
+    const addTimer = (timer) => {
+      activeTimers.add(timer);
+      return timer;
+    };
+
+    // Preload a video to test if it works (without playing)
+    const preloadVideo = (src) => {
+      return new Promise((resolve, reject) => {
+        if (preloadedVideos.has(src)) {
+          resolve(preloadedVideos.get(src));
+          return;
+        }
+        
+        const testVideo = document.createElement('video');
+        testVideo.muted = true;
+        testVideo.preload = "metadata"; // Only load metadata, not full video
+        
+        const timeout = setTimeout(() => {
+          testVideo.src = "";
+          reject(new Error("Preload timeout"));
+        }, 5000);
+        
+        testVideo.addEventListener('loadedmetadata', () => {
+          clearTimeout(timeout);
+          preloadedVideos.set(src, true);
+          resolve(true);
+        }, { once: true });
+        
+        testVideo.addEventListener('error', () => {
+          clearTimeout(timeout);
+          reject(new Error(`Load error: ${testVideo.error?.code}`));
+        }, { once: true });
+        
+        testVideo.src = src;
+        testVideo.load();
+      });
+    };
+
+    function playRandomVideo() {
+      // Kill everything from previous attempt
+      clearAllTimers();
+      
+      // Filter out known broken videos
+      const availableVideos = videoList
+        .map((src, idx) => ({ src, idx }))
+        .filter(({ src }) => !brokenVideos.has(src));
+      
+      if (availableVideos.length === 0) {
+        console.error("All videos failed! Resetting blacklist...");
+        brokenVideos.clear();
+        setTimeout(playRandomVideo, 1000);
+        return;
+      }
+
+      // Pick random from available
+      const pick = availableVideos[Math.floor(Math.random() * availableVideos.length)];
+      currentIndex = pick.idx;
+      const videoSrc = pick.src;
+      
+      console.log("Loading video:", videoSrc.split('/').pop(), "Index:", currentIndex);
+
+      if (!isFirstPlay) {
+        videoEl.classList.add("fading");
+      }
+
+      const fadeDelay = isFirstPlay ? 50 : 400;
+      
+      setTimeout(() => {
+        // Setup video element
+        videoEl.pause();
+        videoEl.removeAttribute('src');
+        while (videoEl.firstChild) videoEl.removeChild(videoEl.firstChild);
+        
+        const source = document.createElement('source');
+        source.src = videoSrc; // No cache-buster for caching (add if needed: + "?cb=" + Date.now())
+        source.type = "video/mp4";
+        videoEl.appendChild(source);
+        
+        videoEl.muted = true;
+        videoEl.playsInline = true;
+        videoEl.load();
+        
+        let checks = 0;
+        const maxChecks = 50; // 5 seconds timeout
+        
+        const checkInterval = addTimer(setInterval(() => {
+          checks++;
+          const state = videoEl.readyState;
+          const err = videoEl.error;
+          
+          // Log every 20 checks (~2 seconds)
+          if (checks % 20 === 0) {
+            console.log(`  Check ${checks}, readyState: ${state}, networkState: ${videoEl.networkState}`);
+          }
+          
+          // SUCCESS: Can play
+          if (state >= 3) {
+            clearInterval(checkInterval);
+            activeTimers.delete(checkInterval);
+            
+            videoEl.play()
+              .then(() => {
+                console.log("✓ Playing:", videoSrc.split('/').pop());
+                videoEl.classList.remove("fading");
+                isFirstPlay = false;
+              })
+              .catch(err => {
+                console.error("✗ Play failed:", err.message);
+                brokenVideos.add(videoSrc);
+                setTimeout(playRandomVideo, 300);
+              });
+          }
+          // ERROR: Mark as broken and skip
+          else if (err) {
+            clearInterval(checkInterval);
+            activeTimers.delete(checkInterval);
+            console.error("✗ Video error:", err.code, "for", videoSrc.split('/').pop());
+            brokenVideos.add(videoSrc);
+            setTimeout(playRandomVideo, 300);
+          }
+          // TIMEOUT: Mark as broken and skip
+          else if (checks >= maxChecks) {
+            clearInterval(checkInterval);
+            activeTimers.delete(checkInterval);
+            console.error("✗ Load timeout for:", videoSrc.split('/').pop());
+            brokenVideos.add(videoSrc);
+            setTimeout(playRandomVideo, 300);
+          }
+        }, 100));
+        
+      }, fadeDelay);
+    }
+
+    // Start
+    playRandomVideo();
+
+    // Natural end
+    videoEl.addEventListener("ended", () => {
+      console.log("Video ended naturally");
+      videoEl.classList.add("fading");
+      setTimeout(playRandomVideo, 400);
+    });
+    
+    // Handle errors during playback
+    videoEl.addEventListener("error", (e) => {
+      const err = videoEl.error;
+      if (err && err.code !== 1) { // Ignore ABORTED errors
+        console.error("Playback error:", err.code);
+        const currentSrc = videoList[currentIndex];
+        if (currentSrc) brokenVideos.add(currentSrc);
+        clearAllTimers();
+        setTimeout(playRandomVideo, 300);
+      }
+    });
+  });
+</script>
+{% endif %}

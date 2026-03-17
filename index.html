@@ -1,162 +1,85 @@
 ---
-title: Perian Development
+title: Home
 description: Explore and discover project made by Perian Development!
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  {% include head.html %}
-  
-  <script src="{{site.baseurl}}/assets/js/loadFeatured.js" defer></script>
-  
-</head>
+    {% include head.html %}
+    </head>
 <body>
 
-	{% include header.html %}
+    {% include header.html %}
 
-	<!-- ===================== HERO ===================== -->
-	<section class="hero">
-	<div class="hero__bg">
-		<video class="hero__video" autoplay muted loop playsinline>
-		<source src="{{site.baseurl}}/assets/videos/hero.mp4" type="video/mp4">
-		</video>
-	</div>
-	<div class="hero__dark-overlay"></div>
-	<div class="hero__overlay"></div>
-	<div class="hero__grid"></div>
-	<div class="hero__vignette"></div>
-	<div class="hero__filter"></div>
-		
-	<div class="hero__content container">
-		<div class="eyebrow">Welcome to</div>
-		<h1 class="title">PerianDevelopment</h1>
-		<p class="subtitle">
-		Endless fun, fueled by a passion for gaming
-		</p>
-		<div class="cta-row">
-		<a href="projects" class="btn btn-primary glow">Explore Projects</a>
-		<!--<a href="About" class="btn btn-ghost">Learn More</a>-->
-		</div>
-	</div>
-	</section>
-	
-	
-	<!-- ===================== FEATURED SECTION ===================== -->
-	<section class="section featured-projects">
-	<section class="intro-featured">
-	<div class="container">
-		<h2 class="intro-title">Projects that <span class="text-highlight">Inspire</span></h2>
-		<p class="intro-text">
-		Take a look at some of my latest work. Each project showcases creativity, innovation, and attention to detail. Explore and get inspired.
-		</p>
-	</div>
-	</section>
-	
-	
-	<!-- ===================== FEATURED ROW (3 cards) ===================== -->
-	<section class="featured-top-row">
-	<div class="container">
-		<div class="cards-top">
-		<!-- Card 1 -->
-		<a class="card-top">
-			<div class="card-top__image" style="background-color: #000"></div>
-			<div class="card-top__overlay"></div>
-			<div class="card-top__featured">
-			<span>✰ FEATURED</span>
-			</div>
-			<div class="card-top__text">
-			<h3>Project</h3>
-			<p>Description</p>
-			</div>
-			<div class="card-top__icon">
-			<span>⧉</span>
-			</div>
-		</a>
-	
-		<!-- Card 2 -->
-		<a class="card-top">
-			<div class="card-top__image" style="background-color: #000"></div>
-			<div class="card-top__overlay"></div>
-			<div class="card-top__featured">
-			<span>✰ FEATURED</span>
-			</div>
-			<div class="card-top__text">
-			<h3>Project</h3>
-			<p>Description</p>
-			</div>
-			<div class="card-top__icon">
-			<span>⧉</span>
-			</div>
-		</a>
-	
-		<!-- Card 3 -->
-		<a class="card-top">
-			<div class="card-top__image" style="background-color: #000');"></div>
-			<div class="card-top__overlay"></div>
-			<div class="card-top__featured">
-			<span>✰ FEATURED</span>
-			</div>
-			<div class="card-top__text">
-			<h3>Project</h3>
-			<p>Description</p>
-			</div>
-			<div class="card-top__icon">
-			<span>⧉</span>
-			</div>
-		</a>
-		</div>
-	</div>
-	</section>
-	
-	<!-- ===================== SECOND ROW (4 cards) ===================== -->
-	<section class="featured-bottom-row">
-	<div class="container">
-		<div class="cards-bottom">
-		
-		<a class="card-bottom">
-			<div class="card-bottom__image"></div>
-			<div class="card-bottom__overlay"></div>
-			<div class="card-bottom__text-icon">
-			<div class="card-bottom__icon">⧉</div>
-			<div class="card-bottom__title">Project</div>
-			</div>
-		</a>
-		
-		<a class="card-bottom">
-			<div class="card-bottom__image"></div>
-			<div class="card-bottom__overlay"></div>
-			<div class="card-bottom__text-icon">
-			<div class="card-bottom__icon">⧉</div>
-			<div class="card-bottom__title">Project</div>
-			</div>
-		</a>
-		
-		<a class="card-bottom">
-			<div class="card-bottom__image"></div>
-			<div class="card-bottom__overlay"></div>
-			<div class="card-bottom__text-icon">
-			<div class="card-bottom__icon">⧉</div>
-			<div class="card-bottom__title">Project</div>
-			</div>
-		</a>
-		
-		<a class="card-bottom">
-			<div class="card-bottom__image"></div>
-			<div class="card-bottom__overlay"></div>
-			<div class="card-bottom__text-icon">
-			<div class="card-bottom__icon">⧉</div>
-			<div class="card-bottom__title">Project</div>
-			</div>
-		</a>
-		
-		</div>
-	</div>
-	</section>
-	</section>
+    {% include hero.html style="large" %}
+    
+    <section class="section featured-projects">
+        <section class="intro-featured">
+            <div class="container">
+                <h2 class="intro-title">Projects that <span class="text-highlight">Inspire</span></h2>
+                <p class="intro-text">
+                    Take a look at some of my latest work. Each project showcases creativity, innovation, and attention to detail.
+                </p>
+            </div>
+        </section>
 
-	{% include footer.html %}
+        {% assign featured_data = site.pages | where: "name", "featured.md" | first %}
+
+        <section class="featured-top-row">
+            <div class="container">
+                <div class="cards-top">
+                    {% assign top_slots = "slot_top_0,slot_top_1,slot_top_2" | split: "," %}
+                    {% for slot in top_slots %}
+                        {% assign target_path = featured_data[slot] %}
+                        {% assign project = site.pages | where: "path", target_path | first %}
+                        
+                        {% if project %}
+                        <a href="{{ site.baseurl }}/projects/{{ project.path }}/" class="card-top">
+                            <div class="card-top__image" style="background-image: url('{{ site.baseurl }}/projects/{{ project.path }}/cover.png'); background-color: #000;"></div>
+                            <div class="card-top__overlay"></div>
+                            <div class="card-top__featured">
+                                <span>✰ FEATURED</span>
+                            </div>
+                            <div class="card-top__text">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description_short }}</p>
+                            </div>
+                            <div class="card-top__icon">
+                                <span>⧉</span>
+                            </div>
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        
+        <section class="featured-bottom-row">
+            <div class="container">
+                <div class="cards-bottom">
+                    {% assign bottom_slots = "slot_bottom_0,slot_bottom_1,slot_bottom_2,slot_bottom_3" | split: "," %}
+                    {% for slot in bottom_slots %}
+                        {% assign target_path = featured_data[slot] %}
+                        {% assign project = site.pages | where: "path", target_path | first %}
+
+                        {% if project %}
+                        <a href="{{ site.baseurl }}/projects/{{ project.path }}/" class="card-bottom">
+                            <div class="card-bottom__image" style="background-image: url('{{ site.baseurl }}/projects/{{ project.path }}/cover.png');"></div>
+                            <div class="card-bottom__overlay"></div>
+                            <div class="card-bottom__text-icon">
+                                <div class="card-bottom__icon">⧉</div>
+                                <div class="card-bottom__title">{{ project.title }}</div>
+                            </div>
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </section>
+
+    {% include footer.html %}
 
 </body>
 </html>
