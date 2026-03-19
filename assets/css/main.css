@@ -607,7 +607,7 @@ flex-wrap: wrap;
 }
 .site-footer .footer-left,
 .site-footer .footer-right {
-flex: 1 1 320px;
+flex: 1 1 80px;
 min-width: 280px;
 }
 .site-footer .footer-logo .logo-box {
