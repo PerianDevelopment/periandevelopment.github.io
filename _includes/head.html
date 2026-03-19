@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>{{ data.title | default: page.title }} - {{ site.title }}</title>
-	<meta name="description" content="{{ data.description_long or page.description or site.description }}">
+	<meta name="description" content="{{ data.description_long | default: page.description | default: site.description }}">
 	
 	<!-- ================= DARK MODE ================= -->
 	<meta name="color-scheme" content="dark">
@@ -23,14 +23,14 @@
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ data.title | default: page.title }} - {{ site.title }}">
-	<meta property="og:description" content="{{ data.description_long or page.description or site.description }}">
+	<meta property="og:description" content="{{ data.description_long | default: page.description | default: site.description }}">
 	<meta property="og:url" content="{{ site.url }}{{site.baseurl}}">
 	<meta property="og:image" content="{{ site.url }}{{site.baseurl}}{{ og_image }}">
 	
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="{{ data.title | default: page.title }} - {{ site.title }}">
-	<meta name="twitter:description" content="{{ data.description_long or page.description or site.description }}">
+	<meta name="twitter:description" content="{{ data.description_long | default: page.description | default: site.description }}">
 	<meta name="twitter:image" content="{{ site.url }}{{site.baseurl}}{{ og_image }}">
 	
 	<!-- ================= ICONS ================= -->
