@@ -13,19 +13,25 @@
 	<!-- ================= SEO ================= -->
 	<meta name="robots" content="index, follow">
 	
+	<!-- ================= IMAGE LOGIC ================= -->
+	{% assign og_image = "/assets/icons/og-icon.png" %}
+	{% if data.type == "project" %}
+	  {% assign og_image = page.url | append: "cover.png" %}
+	{% endif %}
+	
 	<!-- ================= SOCIAL PREVIEWS ================= -->
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ data.title | default: page.title }} - {{ site.title }}">
 	<meta property="og:description" content="{{ data.description_long | page.description | default: site.description }}">
 	<meta property="og:url" content="{{ site.url }}{{site.baseurl}}">
-	<meta property="og:image" content="{{ site.url }}{{site.baseurl}}/assets/icons/og-icon.png">
+	<meta property="og:image" content="{{ site.url }}{{site.baseurl}}{{ og_image }}">
 	
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="{{ data.title | default: page.title }} - {{ site.title }}">
 	<meta name="twitter:description" content="{{ data.description_long | page.description | default: site.description }}">
-	<meta name="twitter:image" content="{{ site.url }}{{site.baseurl}}/assets/icons/og-icon.png">
+	<meta name="twitter:image" content="{{ site.url }}{{site.baseurl}}{{ og_image }}">
 	
 	<!-- ================= ICONS ================= -->
 	<link rel="icon" href="{{site.baseurl}}/assets/icons/icon_shape.svg" type="image/svg+xml">
