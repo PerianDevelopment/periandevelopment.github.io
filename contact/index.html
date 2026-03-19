@@ -1,0 +1,65 @@
+---
+title: Contact
+description: Perian Development Contact Page
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include head.html %}
+
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/css/legal.css" />
+
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  {% include hero.html style="minimal" %}
+
+  <div class="divider"></div>
+
+  <!-- ===================== CONTACT CONTENT ===================== -->
+  <div class="tos-content grid-background">
+
+    <div class="container" style="padding: 50px 0; max-width: 750px;">
+      <h1 class="page-title">Contact</h1>
+      <p class="page-subtitle">Feel free to reach out if you have any questions, feedback, or inquiries about my projects or portfolio.</p>
+    </div>
+
+    <div class="container" style="max-width: 750px;">
+      <div class="tos-section">
+        <h2>Contact Me</h2>
+        <p>If you have any questions, feedback, or inquiries about my projects or portfolio, you can contact me directly via email.</p>
+        <p>Email: <a href="mailto:{{ site.contactmail }}">{{ site.contactmail }}</a></p>
+      </div>
+
+      <div class="tos-section">
+        <h2>What You Can Contact Me About</h2>
+        <ul class="feature-list">
+          <li>Questions about games or projects on this website</li>
+          <li>Collaboration or partnership inquiries</li>
+          <li>Feedback, bug reports, or suggestions</li>
+        </ul>
+      </div>
+
+      <div class="tos-section">
+        <h2>Privacy & Response</h2>
+        <p>Your email will only be used to respond to your inquiry and will not be shared with third parties.</p>
+        <p>I aim to reply within a timely manner.</p>
+      </div>
+
+      <div class="last-updated">
+        <p>Last updated: 19.03.2026</p>
+      </div>
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+</body>
+
+</html>
