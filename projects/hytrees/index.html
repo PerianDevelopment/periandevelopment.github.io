@@ -1,0 +1,161 @@
+---
+project: hytrees
+---
+{% assign data = site.pages | where: "type", "project" | where: "path", page.project | first %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include head.html %}
+
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  {% include hero.html style="slim" %}
+
+  <!-- ===================== PROJECT DETAILS ===================== -->
+  <section class="project-details">
+    <div class="project-details__bg"></div>
+    <div class="container">
+      <div class="project-details__grid">
+
+        <!-- Left Column -->
+        <div class="project-details__column">
+          <div class="project-details__content">
+            <!-- Project Description -->
+            <div class="project-description">
+              <h2>Overview</h2>
+              <p><b>{{data.title}}</b> is a website to easily browse and get additional information for all of the many tree types in Hytale!</p>
+
+              <p>Additional info goes here</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="project-details__column">
+          <div class="project-details__content">
+            <!-- Project Cover Image -->
+            <div class="project-cover">
+              <img src="cover.png" alt="{{data.title}} Game Cover" class="project-cover__image">
+            </div>
+
+            <!-- Top Row: Project Name + Store Button -->
+            <div class="project-header">
+              <h1 class="project-title">{{data.title}}</h1>
+
+              <!--
+            <a href="{{data.project_url}}" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
+              Open WebGL Build
+            </a>
+            -->
+
+            </div>
+
+            <!-- Overview Section -->
+            <div class="overview-section">
+              <h3>Overview</h3>
+              <p class="overview-text">{{data.description_long}}</p>
+            </div>
+
+            <!-- Skills/Tools Section -->
+            <div class="skills-section">
+              <h3>Used Skills/Tools</h3>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/hytale.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">Hytale</h4>
+                    <p class="skill-desc">Project Environment</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/html.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">HTML</h4>
+                    <p class="skill-desc">Website Structure</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/css.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">CSS</h4>
+                    <p class="skill-desc">UI/UX design</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/javascript.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">JS</h4>
+                    <p class="skill-desc">Data loading & search</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/github.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">GitHub Pages</h4>
+                    <p class="skill-desc">Site hosting</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Meta Information -->
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Team Size</span>
+                <span class="meta-value">Solo Project</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Studio</span>
+                <span class="meta-value">Perian Development</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Type</span>
+                <span class="meta-value">Website</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value status-released">Released</span>
+              </div>
+              <div class="divider"></div>
+              <div class="meta-item">
+                <span class="meta-label">Data Metrics & Research</span>
+                <span class="meta-value">HytaleEngineer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include footer.html %}
+
+</body>
+
+</html>
