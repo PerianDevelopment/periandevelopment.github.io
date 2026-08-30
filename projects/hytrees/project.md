@@ -9,5 +9,5 @@ description_long: A website listing, categorizing and  displaying all trees foun
 
 tags: [hytale, block, game, ressource, browser, website, tool, collection, html, css, js, frontend, github pages, jekyll, 2026, solo]
 order: 7
-displayed: false
+displayed: true
 ---
