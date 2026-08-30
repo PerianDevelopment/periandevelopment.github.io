@@ -1,0 +1,137 @@
+---
+project: train-hex
+---
+{% assign data = site.pages | where: "type", "project" | where: "path", page.project | first %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  {% include head.html %}
+  
+</head>
+
+<body>
+
+  {% include header.html %}
+
+  {% include hero.html style="slim" %}
+
+  <!-- ===================== PROJECT DETAILS ===================== -->
+  <section class="project-details">
+    <div class="project-details__bg"></div>
+    <div class="container">
+      <div class="project-details__grid">
+
+        <!-- Left Column -->
+        <div class="project-details__column">
+          <div class="project-details__content">
+            <!-- Project Description -->
+            <div class="project-description">
+              <h2>Overview</h2>
+              <p><b>{{data.title}}</b> is the updated and improved version of the <a href="{{site.baseurl}}/projects/train-lovers" style="color: #FF382E; text-decoration: underline;"><b>Train Lovers</b></a> project for the <em>Game Polishing</em> lecture.</p>
+              <p>My role in this project was to implement a proper UI and enhance the user experience, especially in the main menu and gameplay interfaces.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="project-details__column">
+          <div class="project-details__content">
+            <!-- Project Cover Image -->
+            <div class="project-cover">
+              <img src="cover.png" alt="{{data.title}} Game Cover" class="project-cover__image">
+            </div>
+
+            <!-- Top Row: Project Name + Store Button -->
+            <div class="project-header">
+              <h1 class="project-title">{{data.title}}</h1>
+
+              <!--
+            <a href="{{data.project_url}}" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
+              Open WebGL Build
+            </a>
+            -->
+
+            </div>
+
+            <!-- Overview Section -->
+            <div class="overview-section">
+              <h3>Overview</h3>
+              <p class="overview-text">{{data.description_long}}</p>
+              <div class="divider"></div>
+              <p class="overview-text"><b>{{data.title}}</b> is the updated and improved version of the <a href="{{site.baseurl}}/projects/train-lovers" style="color: #FF382E; text-decoration: underline;"><b>Train Lovers</b></a> project for the <em>Game Polishing</em> lecture.</p>
+            </div>
+
+            <!-- Skills/Tools Section -->
+            <div class="skills-section">
+              <h3>Used Skills/Tools</h3>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/unity.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">Unity Engine</h4>
+                    <p class="skill-desc">Game development engine</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/code.svg" width="24" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">C#</h4>
+                    <p class="skill-desc">UI implementation and scripting</p>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon-container">
+                    <img src="{{site.baseurl}}/assets/icons/figma.svg" width="18" height="24" alt="Icon"
+                      style="filter: brightness(0) invert(1);">
+                  </div>
+                  <div class="skill-content">
+                    <h4 class="skill-name">Figma</h4>
+                    <p class="skill-desc">UI concepts and design</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Meta Information -->
+            <div class="project-meta">
+              <div class="meta-item">
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Team Size</span>
+                <span class="meta-value">2</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Project Type</span>
+                <span class="meta-value">University Project</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Type</span>
+                <span class="meta-value">Hexagon Puzzle Game</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value status-released">Finished</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include footer.html %}
+
+</body>
+
+</html>
