@@ -9,7 +9,7 @@ project: train-hex
 <head>
 
   {% include head.html %}
-  
+
 </head>
 
 <body>
@@ -30,8 +30,107 @@ project: train-hex
             <!-- Project Description -->
             <div class="project-description">
               <h2>Overview</h2>
-              <p><b>{{data.title}}</b> is the updated and improved version of the <b>Train Lovers</b> project for the <em>Game Polishing</em> lecture.</p>
-              <p>My role in this project was to implement a proper UI and enhance the user experience, especially in the main menu and gameplay interfaces.</p>
+
+              <p><b>{{data.title}}</b> is the updated and improved version of the <b>Train Lovers</b> project for the
+                <em>Game Polishing</em> lecture. Together with Julius, I decided to continue working on the project. We
+                renamed it to {{data.title}}, split the tasks between us, and focused on improving the game in preparation for
+                the <em>Game Exhibition</em>.
+              </p>
+
+              <p>My role in this project was to implement the settings and menus, as well as integrate the user
+                interface into the 3D environment. The goal was to make the game feel more visually polished and ready
+                for the exhibition.</p>
+
+              <div class="divider"></div>
+
+              <h3>Branding & Marketing</h3>
+
+              <p>Julius focused mainly on the branding and marketing material for the game. He created the logo,
+                multiple banners and posters, and organized our appearance at the game exhibition, which was a great
+                success!</p>
+
+              <div class="media-grid grid-2">
+                <div class="media-item"><img src="TrainHex_Banner_2.png" alt="{{data.title}} Banner 2"></img></div>
+                <div class="media-item"><img src="TrainHex_Banner_1.png" alt="{{data.title}} Banner 1"></img></div>
+              </div>
+
+              <div class="divider"></div>
+
+              <h3>Start Screen</h3>
+
+              <p>The first change i made was to the start screen, which was extremely underwhelming previously. I
+                decided
+                that a simple circular track with the train continuously driving around it would provide visual interest
+                and immediately draw attention.
+              </p>
+
+              <p>It was important that the start screen looked appealing, since it's the first thing players see at the
+                game expo and we have to compete with a lot of other games. If our game doesn't stand out, many visitors
+                won't even give our game a chance.
+              </p>
+
+              <div class="media-grid grid-2">
+                <h3 style="margin: 0 0 0 0;">Old Start Screen</h3>
+                <h3 style="margin: 0 0 0 0;">New Start Screen</h3>
+
+                <div class="media-item"><img src="train_lovers_main_menu.png" alt="TrainLovers start screen"></img>
+                </div>
+                <div class="media-item">
+                  <video src="start_screen.mp4" autoplay muted loop alt="{{data.title}} start screen"></video>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <h3>Level Selection</h3>
+
+              <p>The level selection screen used to be a few static buttons. The new 3D design integrates the levels
+                into the game environment, providing a more immersive experience. The selected level is spinning and the
+                stars are hovering above it. The navigation in between levels is also improved with smooth animations
+                and
+                a simple and intuitive control scheme.</p>
+
+              <p>These changes made the level selection more engaging and enjoyable for players. Some players who had
+                already
+                completed all levels with three stars even ended up watching the menu animations after finishing the
+                game!</p>
+
+              <div class="media-grid grid-2">
+                <h3 style="margin: 0 0 0 0;">Old Level Selection</h3>
+                <h3 style="margin: 0 0 0 0;">New Level Selection</h3>
+
+                <div class="media-item"><img src="train_lovers_level_selection.png"
+                    alt="TrainLovers level selection"></img></div>
+                <div class="media-item">
+                  <video src="level_selection.mp4" autoplay muted loop alt="{{data.title}} level Selection"></video>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <h3>Settings</h3>
+
+              <p>The settings were added from scratch to the game, since the previous version did not have this feature.
+                This included localising all interfaces and menus using Unity's Localization Package.</p>
+
+              <p>All settings are fully functional and save between sessions.</p>
+
+              <div class="media-item">
+                <video src="settings.mp4" autoplay muted loop alt="{{data.title}} settings"></video>
+              </div>
+
+              <div class="divider"></div>
+
+              <h3>Final Result</h3>
+
+              <p>The final result is a significantly improved version of the game with a more immersive 3D environment,
+                enhanced level selection, and fully functional settings. I am very happy with the outcome and the
+                improvements made.</p>
+
+              <div class="media-item">
+                <video src="navigation.mp4" autoplay muted loop alt=" menu navigation"></video>
+              </div>
+
             </div>
           </div>
         </div>
@@ -61,7 +160,8 @@ project: train-hex
               <h3>Overview</h3>
               <p class="overview-text">{{data.description_long}}</p>
               <div class="divider"></div>
-              <p class="overview-text"><b>{{data.title}}</b> is the updated and improved version of the <a href="{{site.baseurl}}/projects/train-lovers"><b>Train Lovers</b></a> project.</p>
+              <p class="overview-text"><b>{{data.title}}</b> is the updated and improved version of the <a
+                  href="{{site.baseurl}}/projects/train-lovers"><b>Train Lovers</b></a> project.</p>
             </div>
 
             <!-- Skills/Tools Section -->
