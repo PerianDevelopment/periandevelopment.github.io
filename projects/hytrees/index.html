@@ -30,9 +30,76 @@ project: hytrees
             <!-- Project Description -->
             <div class="project-description">
               <h2>Overview</h2>
-              <p><b>{{data.title}}</b> is a website to easily browse and get additional information for all of the many tree types in Hytale!</p>
 
-              <p>Additional info goes here</p>
+              <p>
+                <b>{{data.title}}</b> is a website created as a resource for <b>Hytale</b>, specifically focused on the
+                different tree types found throughout the game. The goal was to create a simple, useful reference that
+                players can quickly access while playing, without having to search through wikis or other scattered
+                information.
+              </p>
+
+              <p>
+                The website provides detailed information about each of the <b>30+</b> tree types, making it easy for
+                players to find the information they need to grow and harvest trees effectively:
+              </p>
+
+              <ul class="feature-list">
+                <li>The wood type, log texture and tree appearance</li>
+                <li>Growth requirements like the required station level, sapling price, required spacing or soil depth
+                </li>
+                <li>All items players can expect to obtain from harvesting a fully grown tree</li>
+                <li>Any other relevant details about each tree type, like unique properties or behaviors</li>
+              </ul>
+
+              <div class="media-item"><img src="tree_view.png" alt="Tree View"></img></div>
+
+              <div class="divider"></div>
+
+              <h3>Data collection</h3>
+
+              <p>
+                The tree data was collected by <b>Hytale Engineer</b>, who created a <a
+                  href="https://www.youtube.com/watch?v=jssczRa2hGc" target="_blank" rel="noopener noreferrer">YouTube
+                  Video</a> about the data, with a plain
+                spreadsheet linked underneath. I build the website based on this data and added, unified, and trimmed the information to fit.
+              </p>
+
+              <div class="divider"></div>
+
+              <h3>Design &amp; UX</h3>
+
+              <p>
+                I wanted the interface to stay clean and simple, while still making the information easy to scan, which
+                is solved by a search bar with filtering to quickly find the tree you are looking for. The website is
+                also fully responsive and works well on mobile devices, so players can access it while playing the game.
+              </p>
+              <p>
+                I chose the <a href="https://fonts.google.com/specimen/Cinzel?preview.script=Latn" target="_blank"
+                  rel="noopener noreferrer">Cinzel Google Font</a>, since it matches the fantasy aesthetic in Hytale and is
+                easy to read. The color scheme is based on the Hytale brand colors, with the primary hex <b
+                  style="color: #456BA9;">#456BA9</b>.
+              </p>
+
+              <div class="divider"></div>
+
+              <h3>Tech &amp; Build Notes</h3>
+
+              <ul class="feature-list">
+                <li>30+ tree types</li>
+                <li>Plain HTML, CSS and JavaScript</li>
+                <li>Tree data in JSON file</li>
+                <li>Hosted on GitHub Pages</li>
+                <li>I used AI to help speed up parts of the project. But the core implementation is my work</li>
+              </ul>
+
+              <div class="divider"></div>
+
+              <h3>Final Result</h3>
+
+              <p>
+                This project was a fun way to combine my interest in <b>Hytale</b> with building a
+                practical tool that I actually use myself while playing.
+              </p>
             </div>
           </div>
         </div>
@@ -49,11 +116,10 @@ project: hytrees
             <div class="project-header">
               <h1 class="project-title">{{data.title}}</h1>
 
-              <!--
-            <a href="{{data.project_url}}" class="btn btn-primary store-button" target="_blank" rel="noopener noreferrer">
-              Open WebGL Build
-            </a>
-            -->
+              <a href="{{data.project_url}}" class="btn btn-primary store-button" target="_blank"
+                rel="noopener noreferrer">
+                Open Website
+              </a>
 
             </div>
 
@@ -144,8 +210,9 @@ project: hytrees
               </div>
               <div class="divider"></div>
               <div class="meta-item">
-                <span class="meta-label">Data Metrics & Research</span>
-                <span class="meta-value">HytaleEngineer</span>
+                <span class="meta-label">Tree Data Metrics</span>
+                <span class="meta-value"><a href="https://www.youtube.com/@HytaleEngineer" target="_blank"
+                    rel="noopener noreferrer">HytaleEngineer</a></span>
               </div>
             </div>
           </div>

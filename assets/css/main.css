@@ -2417,3 +2417,24 @@ body.sidebar-open {
     display: none;
   }
 }
+
+
+
+
+/* Project description links */
+.project-description a,
+.overview-text a,
+.project-meta a {
+  color: var(--brand-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  transition: color 180ms var(--easing);
+}
+
+.project-description a:hover,
+.overview-text a:hover,
+.project-meta a:hover {
+  color: var(--white);
+}
